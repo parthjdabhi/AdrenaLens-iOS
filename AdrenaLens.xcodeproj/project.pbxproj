@@ -1,0 +1,971 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		676873DFA2D685FA074BC2FD /* Pods_AdrenaLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39FF1EEEE8289C407A8F9D /* Pods_AdrenaLens.framework */; };
+		DA0228891D3342B900AA5A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228881D3342B900AA5A99 /* AppDelegate.swift */; };
+		DA02288B1D3342B900AA5A99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA02288A1D3342B900AA5A99 /* ViewController.swift */; };
+		DA02288E1D3342B900AA5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02288C1D3342B900AA5A99 /* Main.storyboard */; };
+		DA0228911D3342B900AA5A99 /* AdrenaLens.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA02288F1D3342B900AA5A99 /* AdrenaLens.xcdatamodeld */; };
+		DA0228931D3342B900AA5A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0228921D3342B900AA5A99 /* Assets.xcassets */; };
+		DA0228961D3342B900AA5A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0228941D3342B900AA5A99 /* LaunchScreen.storyboard */; };
+		DA0228A11D3342B900AA5A99 /* AdrenaLensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228A01D3342B900AA5A99 /* AdrenaLensTests.swift */; };
+		DA0228AC1D3342BA00AA5A99 /* AdrenaLensUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228AB1D3342BA00AA5A99 /* AdrenaLensUITests.swift */; };
+		DA0228BA1D33475900AA5A99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA0228B91D33475900AA5A99 /* GoogleService-Info.plist */; };
+		DA0228C31D3349A000AA5A99 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228BC1D3349A000AA5A99 /* Helper.swift */; };
+		DA0228C41D3349A000AA5A99 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228BD1D3349A000AA5A99 /* CommonUtils.swift */; };
+		DA0228C51D3349A000AA5A99 /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228BE1D3349A000AA5A99 /* RotateImage.swift */; };
+		DA0228C61D3349A000AA5A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228BF1D3349A000AA5A99 /* Constants.swift */; };
+		DA0228C71D3349A000AA5A99 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228C01D3349A000AA5A99 /* Extensions.swift */; };
+		DA0228C81D3349A000AA5A99 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228C11D3349A000AA5A99 /* AppState.swift */; };
+		DA0228C91D3349A000AA5A99 /* AEXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228C21D3349A000AA5A99 /* AEXML.swift */; };
+		DA0228CE1D3349DA00AA5A99 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0228CD1D3349DA00AA5A99 /* MBProgressHUD.m */; };
+		DA0228D51D334AF000AA5A99 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228D01D334AF000AA5A99 /* MainScreenViewController.swift */; };
+		DA0228D61D334AF000AA5A99 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228D11D334AF000AA5A99 /* SignUpViewController.swift */; };
+		DA0228D81D334AF000AA5A99 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228D31D334AF000AA5A99 /* LogInViewController.swift */; };
+		DA0228D91D334AF000AA5A99 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228D41D334AF000AA5A99 /* PhotoViewController.swift */; };
+		DA8B4A591D52F23500F56470 /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A581D52F23500F56470 /* LaunchScreen.png */; };
+		DA8B4A6D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A5B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png */; };
+		DA8B4A6E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A5C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png */; };
+		DA8B4A6F1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A5D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png */; };
+		DA8B4A701D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A5E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png */; };
+		DA8B4A711D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A5F1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png */; };
+		DA8B4A721D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A601D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png */; };
+		DA8B4A731D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A611D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png */; };
+		DA8B4A741D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A621D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png */; };
+		DA8B4A751D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A631D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png */; };
+		DA8B4A761D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A641D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png */; };
+		DA8B4A771D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A651D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png */; };
+		DA8B4A781D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A661D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png */; };
+		DA8B4A791D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0013_Login.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A671D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0013_Login.png */; };
+		DA8B4A7A1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A681D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png */; };
+		DA8B4A7B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A691D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png */; };
+		DA8B4A7C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A6A1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png */; };
+		DA8B4A7D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A6B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png */; };
+		DA8B4A7E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A6C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png */; };
+		DA8B4A801D52FB6100F56470 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A7F1D52FB6100F56470 /* IntroViewController.swift */; };
+		DA8B4A821D52FE1E00F56470 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */; };
+		DA8B4A9B1D53967900F56470 /* Login-Screen-1_0000_Grid.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A861D53967900F56470 /* Login-Screen-1_0000_Grid.png */; };
+		DA8B4A9C1D53967900F56470 /* AdrenaLensYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A871D53967900F56470 /* AdrenaLensYellow.png */; };
+		DA8B4A9D1D53967900F56470 /* Login-Screen-1_0002_Layer-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A881D53967900F56470 /* Login-Screen-1_0002_Layer-3.png */; };
+		DA8B4A9E1D53967900F56470 /* BlackBar.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A891D53967900F56470 /* BlackBar.png */; };
+		DA8B4A9F1D53967900F56470 /* BlackLine.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8A1D53967900F56470 /* BlackLine.png */; };
+		DA8B4AA01D53967900F56470 /* YellowStar.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8B1D53967900F56470 /* YellowStar.png */; };
+		DA8B4AA11D53967900F56470 /* YellowPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8C1D53967900F56470 /* YellowPerson.png */; };
+		DA8B4AA21D53967900F56470 /* YellowHouse.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8D1D53967900F56470 /* YellowHouse.png */; };
+		DA8B4AA31D53967900F56470 /* YellowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8E1D53967900F56470 /* YellowUp.png */; };
+		DA8B4AA41D53967900F56470 /* YellowEye.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A8F1D53967900F56470 /* YellowEye.png */; };
+		DA8B4AA51D53967900F56470 /* UserName.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A901D53967900F56470 /* UserName.png */; };
+		DA8B4AA61D53967900F56470 /* TextBox.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A911D53967900F56470 /* TextBox.png */; };
+		DA8B4AA71D53967900F56470 /* Password.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A921D53967900F56470 /* Password.png */; };
+		DA8B4AA81D53967900F56470 /* Login-Screen-1_0013_Password-Box.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A931D53967900F56470 /* Login-Screen-1_0013_Password-Box.png */; };
+		DA8B4AA91D53967900F56470 /* LoginIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A941D53967900F56470 /* LoginIcon.png */; };
+		DA8B4AAA1D53967900F56470 /* ArrowIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A951D53967900F56470 /* ArrowIcon.png */; };
+		DA8B4AAB1D53967900F56470 /* PersonIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A961D53967900F56470 /* PersonIcon.png */; };
+		DA8B4AAC1D53967900F56470 /* ContactAdrenaLens.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A971D53967900F56470 /* ContactAdrenaLens.png */; };
+		DA8B4AAD1D53967900F56470 /* Welcome.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A981D53967900F56470 /* Welcome.png */; };
+		DA8B4AAE1D53967900F56470 /* Login-Screen-1_0019_Icon-Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A991D53967900F56470 /* Login-Screen-1_0019_Icon-Bar.png */; };
+		DA8B4AAF1D53967900F56470 /* Login-Screen-1_0020_Layer-0.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4A9A1D53967900F56470 /* Login-Screen-1_0020_Layer-0.png */; };
+		DA8B4B6A1D5514B200F56470 /* ContactUs.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B631D5514B200F56470 /* ContactUs.png */; };
+		DA8B4B6B1D5514B200F56470 /* EmailAddress.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B641D5514B200F56470 /* EmailAddress.png */; };
+		DA8B4B6C1D5514B200F56470 /* EmailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B651D5514B200F56470 /* EmailIcon.png */; };
+		DA8B4B6D1D5514B200F56470 /* Message.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B661D5514B200F56470 /* Message.png */; };
+		DA8B4B6E1D5514B200F56470 /* Send.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B671D5514B200F56470 /* Send.png */; };
+		DA8B4B6F1D5514B200F56470 /* Subject.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B681D5514B200F56470 /* Subject.png */; };
+		DA8B4B701D5514B200F56470 /* SubjectBox.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B691D5514B200F56470 /* SubjectBox.png */; };
+		DA8B4B721D5521BE00F56470 /* Contact2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4B711D5521BE00F56470 /* Contact2ViewController.swift */; };
+		DA8B4B781D5523D000F56470 /* ConfirmPassword.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B741D5523D000F56470 /* ConfirmPassword.png */; };
+		DA8B4B791D5523D000F56470 /* Name.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B751D5523D000F56470 /* Name.png */; };
+		DA8B4B7A1D5523D000F56470 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B761D5523D000F56470 /* Register.png */; };
+		DA8B4B7B1D5523D000F56470 /* RegisterLabel.png in Resources */ = {isa = PBXBuildFile; fileRef = DA8B4B771D5523D000F56470 /* RegisterLabel.png */; };
+		DA8B4BEC1D57EB2F00F56470 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */; };
+		DA8B4BED1D57EB4E00F56470 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */; };
+		DA9EBD0C1D39C84F00A71CAE /* SoLOz.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9EBD0B1D39C84F00A71CAE /* SoLOz.png */; };
+		DA9EBD0E1D39C85F00A71CAE /* Create-New.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9EBD0D1D39C85F00A71CAE /* Create-New.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA02289D1D3342B900AA5A99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA02287D1D3342B900AA5A99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA0228841D3342B900AA5A99;
+			remoteInfo = AdrenaLens;
+		};
+		DA0228A81D3342BA00AA5A99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA02287D1D3342B900AA5A99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA0228841D3342B900AA5A99;
+			remoteInfo = AdrenaLens;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.release.xcconfig"; sourceTree = "<group>"; };
+		3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.debug.xcconfig"; sourceTree = "<group>"; };
+		CD39FF1EEEE8289C407A8F9D /* Pods_AdrenaLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdrenaLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0228851D3342B900AA5A99 /* AdrenaLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdrenaLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0228881D3342B900AA5A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA02288A1D3342B900AA5A99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA02288D1D3342B900AA5A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA0228901D3342B900AA5A99 /* AdrenaLens.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdrenaLens.xcdatamodel; sourceTree = "<group>"; };
+		DA0228921D3342B900AA5A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA0228951D3342B900AA5A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA0228971D3342B900AA5A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA02289C1D3342B900AA5A99 /* AdrenaLensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdrenaLensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0228A01D3342B900AA5A99 /* AdrenaLensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdrenaLensTests.swift; sourceTree = "<group>"; };
+		DA0228A21D3342B900AA5A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA0228A71D3342B900AA5A99 /* AdrenaLensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdrenaLensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0228AB1D3342BA00AA5A99 /* AdrenaLensUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdrenaLensUITests.swift; sourceTree = "<group>"; };
+		DA0228AD1D3342BA00AA5A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA0228B91D33475900AA5A99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA0228BC1D3349A000AA5A99 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DA0228BD1D3349A000AA5A99 /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		DA0228BE1D3349A000AA5A99 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
+		DA0228BF1D3349A000AA5A99 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA0228C01D3349A000AA5A99 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DA0228C11D3349A000AA5A99 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DA0228C21D3349A000AA5A99 /* AEXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AEXML.swift; sourceTree = "<group>"; };
+		DA0228CC1D3349DA00AA5A99 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DA0228CD1D3349DA00AA5A99 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DA0228CF1D334A0000AA5A99 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "AdrenaLens/Bridging-Header.h"; sourceTree = "<group>"; };
+		DA0228D01D334AF000AA5A99 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		DA0228D11D334AF000AA5A99 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DA0228D31D334AF000AA5A99 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		DA0228D41D334AF000AA5A99 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		DA8B4A581D52F23500F56470 /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		DA8B4A5B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png"; sourceTree = "<group>"; };
+		DA8B4A5C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png"; sourceTree = "<group>"; };
+		DA8B4A5D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png"; sourceTree = "<group>"; };
+		DA8B4A5E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png"; sourceTree = "<group>"; };
+		DA8B4A5F1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png"; sourceTree = "<group>"; };
+		DA8B4A601D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png"; sourceTree = "<group>"; };
+		DA8B4A611D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png"; sourceTree = "<group>"; };
+		DA8B4A621D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png"; sourceTree = "<group>"; };
+		DA8B4A631D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png"; sourceTree = "<group>"; };
+		DA8B4A641D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png"; sourceTree = "<group>"; };
+		DA8B4A651D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png"; sourceTree = "<group>"; };
+		DA8B4A661D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0012_Register.png"; sourceTree = "<group>"; };
+		DA8B4A671D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0013_Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0013_Login.png"; sourceTree = "<group>"; };
+		DA8B4A681D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png"; sourceTree = "<group>"; };
+		DA8B4A691D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png"; sourceTree = "<group>"; };
+		DA8B4A6A1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png"; sourceTree = "<group>"; };
+		DA8B4A6B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png"; sourceTree = "<group>"; };
+		DA8B4A6C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png"; sourceTree = "<group>"; };
+		DA8B4A7F1D52FB6100F56470 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		DA8B4A861D53967900F56470 /* Login-Screen-1_0000_Grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Screen-1_0000_Grid.png"; sourceTree = "<group>"; };
+		DA8B4A871D53967900F56470 /* AdrenaLensYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AdrenaLensYellow.png; sourceTree = "<group>"; };
+		DA8B4A881D53967900F56470 /* Login-Screen-1_0002_Layer-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Screen-1_0002_Layer-3.png"; sourceTree = "<group>"; };
+		DA8B4A891D53967900F56470 /* BlackBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBar.png; sourceTree = "<group>"; };
+		DA8B4A8A1D53967900F56470 /* BlackLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackLine.png; sourceTree = "<group>"; };
+		DA8B4A8B1D53967900F56470 /* YellowStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowStar.png; sourceTree = "<group>"; };
+		DA8B4A8C1D53967900F56470 /* YellowPerson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowPerson.png; sourceTree = "<group>"; };
+		DA8B4A8D1D53967900F56470 /* YellowHouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowHouse.png; sourceTree = "<group>"; };
+		DA8B4A8E1D53967900F56470 /* YellowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowUp.png; sourceTree = "<group>"; };
+		DA8B4A8F1D53967900F56470 /* YellowEye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowEye.png; sourceTree = "<group>"; };
+		DA8B4A901D53967900F56470 /* UserName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UserName.png; sourceTree = "<group>"; };
+		DA8B4A911D53967900F56470 /* TextBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextBox.png; sourceTree = "<group>"; };
+		DA8B4A921D53967900F56470 /* Password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Password.png; sourceTree = "<group>"; };
+		DA8B4A931D53967900F56470 /* Login-Screen-1_0013_Password-Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Screen-1_0013_Password-Box.png"; sourceTree = "<group>"; };
+		DA8B4A941D53967900F56470 /* LoginIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoginIcon.png; sourceTree = "<group>"; };
+		DA8B4A951D53967900F56470 /* ArrowIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowIcon.png; sourceTree = "<group>"; };
+		DA8B4A961D53967900F56470 /* PersonIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PersonIcon.png; sourceTree = "<group>"; };
+		DA8B4A971D53967900F56470 /* ContactAdrenaLens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactAdrenaLens.png; sourceTree = "<group>"; };
+		DA8B4A981D53967900F56470 /* Welcome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Welcome.png; sourceTree = "<group>"; };
+		DA8B4A991D53967900F56470 /* Login-Screen-1_0019_Icon-Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Screen-1_0019_Icon-Bar.png"; sourceTree = "<group>"; };
+		DA8B4A9A1D53967900F56470 /* Login-Screen-1_0020_Layer-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Screen-1_0020_Layer-0.png"; sourceTree = "<group>"; };
+		DA8B4B631D5514B200F56470 /* ContactUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactUs.png; sourceTree = "<group>"; };
+		DA8B4B641D5514B200F56470 /* EmailAddress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailAddress.png; sourceTree = "<group>"; };
+		DA8B4B651D5514B200F56470 /* EmailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailIcon.png; sourceTree = "<group>"; };
+		DA8B4B661D5514B200F56470 /* Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Message.png; sourceTree = "<group>"; };
+		DA8B4B671D5514B200F56470 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
+		DA8B4B681D5514B200F56470 /* Subject.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subject.png; sourceTree = "<group>"; };
+		DA8B4B691D5514B200F56470 /* SubjectBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SubjectBox.png; sourceTree = "<group>"; };
+		DA8B4B711D5521BE00F56470 /* Contact2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact2ViewController.swift; sourceTree = "<group>"; };
+		DA8B4B741D5523D000F56470 /* ConfirmPassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ConfirmPassword.png; sourceTree = "<group>"; };
+		DA8B4B751D5523D000F56470 /* Name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Name.png; sourceTree = "<group>"; };
+		DA8B4B761D5523D000F56470 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Register.png; sourceTree = "<group>"; };
+		DA8B4B771D5523D000F56470 /* RegisterLabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RegisterLabel.png; sourceTree = "<group>"; };
+		DA9EBD0B1D39C84F00A71CAE /* SoLOz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SoLOz.png; sourceTree = "<group>"; };
+		DA9EBD0D1D39C85F00A71CAE /* Create-New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Create-New.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA0228821D3342B900AA5A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676873DFA2D685FA074BC2FD /* Pods_AdrenaLens.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA0228991D3342B900AA5A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA0228A41D3342B900AA5A99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F0980D0BE2B58BE4C31238E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */,
+				16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA02287C1D3342B900AA5A99 = {
+			isa = PBXGroup;
+			children = (
+				DA0228CF1D334A0000AA5A99 /* Bridging-Header.h */,
+				DA0228871D3342B900AA5A99 /* AdrenaLens */,
+				DA02289F1D3342B900AA5A99 /* AdrenaLensTests */,
+				DA0228AA1D3342BA00AA5A99 /* AdrenaLensUITests */,
+				DA0228861D3342B900AA5A99 /* Products */,
+				1F0980D0BE2B58BE4C31238E /* Pods */,
+				E4D9FEEE29284790FA240F70 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA0228861D3342B900AA5A99 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA0228851D3342B900AA5A99 /* AdrenaLens.app */,
+				DA02289C1D3342B900AA5A99 /* AdrenaLensTests.xctest */,
+				DA0228A71D3342B900AA5A99 /* AdrenaLensUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA0228871D3342B900AA5A99 /* AdrenaLens */ = {
+			isa = PBXGroup;
+			children = (
+				DA02288A1D3342B900AA5A99 /* ViewController.swift */,
+				DA0228881D3342B900AA5A99 /* AppDelegate.swift */,
+				DA0228D01D334AF000AA5A99 /* MainScreenViewController.swift */,
+				DA0228D11D334AF000AA5A99 /* SignUpViewController.swift */,
+				DA0228D41D334AF000AA5A99 /* PhotoViewController.swift */,
+				DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */,
+				DA8B4B731D5522AC00F56470 /* Intro Pages */,
+				DA8B4A851D52FE6900F56470 /* Storyboards */,
+				DA8B4A841D52FE4700F56470 /* Settings */,
+				DA0228BB1D33497500AA5A99 /* Helper Files */,
+				DA9EBD0A1D39C53600A71CAE /* Pictures */,
+				DA0228921D3342B900AA5A99 /* Assets.xcassets */,
+				DA0228B91D33475900AA5A99 /* GoogleService-Info.plist */,
+				DA0228971D3342B900AA5A99 /* Info.plist */,
+				DA02288F1D3342B900AA5A99 /* AdrenaLens.xcdatamodeld */,
+			);
+			path = AdrenaLens;
+			sourceTree = "<group>";
+		};
+		DA02289F1D3342B900AA5A99 /* AdrenaLensTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA0228A01D3342B900AA5A99 /* AdrenaLensTests.swift */,
+				DA0228A21D3342B900AA5A99 /* Info.plist */,
+			);
+			path = AdrenaLensTests;
+			sourceTree = "<group>";
+		};
+		DA0228AA1D3342BA00AA5A99 /* AdrenaLensUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA0228AB1D3342BA00AA5A99 /* AdrenaLensUITests.swift */,
+				DA0228AD1D3342BA00AA5A99 /* Info.plist */,
+			);
+			path = AdrenaLensUITests;
+			sourceTree = "<group>";
+		};
+		DA0228BB1D33497500AA5A99 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA0228BC1D3349A000AA5A99 /* Helper.swift */,
+				DA0228BD1D3349A000AA5A99 /* CommonUtils.swift */,
+				DA0228BE1D3349A000AA5A99 /* RotateImage.swift */,
+				DA0228BF1D3349A000AA5A99 /* Constants.swift */,
+				DA0228C01D3349A000AA5A99 /* Extensions.swift */,
+				DA0228C11D3349A000AA5A99 /* AppState.swift */,
+				DA0228C21D3349A000AA5A99 /* AEXML.swift */,
+				DA0228CA1D3349CD00AA5A99 /* MBProgressHUD-master */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
+		DA0228CA1D3349CD00AA5A99 /* MBProgressHUD-master */ = {
+			isa = PBXGroup;
+			children = (
+				DA0228CC1D3349DA00AA5A99 /* MBProgressHUD.h */,
+				DA0228CD1D3349DA00AA5A99 /* MBProgressHUD.m */,
+			);
+			name = "MBProgressHUD-master";
+			sourceTree = "<group>";
+		};
+		DA8B4A561D52F21900F56470 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				DA9EBD0B1D39C84F00A71CAE /* SoLOz.png */,
+				DA8B4A581D52F23500F56470 /* LaunchScreen.png */,
+				DA9EBD0D1D39C85F00A71CAE /* Create-New.png */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		DA8B4A571D52F21E00F56470 /* Register/Login */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4B741D5523D000F56470 /* ConfirmPassword.png */,
+				DA8B4B751D5523D000F56470 /* Name.png */,
+				DA8B4B761D5523D000F56470 /* Register.png */,
+				DA8B4B771D5523D000F56470 /* RegisterLabel.png */,
+				DA8B4A861D53967900F56470 /* Login-Screen-1_0000_Grid.png */,
+				DA8B4A871D53967900F56470 /* AdrenaLensYellow.png */,
+				DA8B4A881D53967900F56470 /* Login-Screen-1_0002_Layer-3.png */,
+				DA8B4A891D53967900F56470 /* BlackBar.png */,
+				DA8B4A8A1D53967900F56470 /* BlackLine.png */,
+				DA8B4A8B1D53967900F56470 /* YellowStar.png */,
+				DA8B4A8C1D53967900F56470 /* YellowPerson.png */,
+				DA8B4A8D1D53967900F56470 /* YellowHouse.png */,
+				DA8B4A8E1D53967900F56470 /* YellowUp.png */,
+				DA8B4A8F1D53967900F56470 /* YellowEye.png */,
+				DA8B4A901D53967900F56470 /* UserName.png */,
+				DA8B4A911D53967900F56470 /* TextBox.png */,
+				DA8B4A921D53967900F56470 /* Password.png */,
+				DA8B4A931D53967900F56470 /* Login-Screen-1_0013_Password-Box.png */,
+				DA8B4A941D53967900F56470 /* LoginIcon.png */,
+				DA8B4A951D53967900F56470 /* ArrowIcon.png */,
+				DA8B4A961D53967900F56470 /* PersonIcon.png */,
+				DA8B4A971D53967900F56470 /* ContactAdrenaLens.png */,
+				DA8B4A981D53967900F56470 /* Welcome.png */,
+				DA8B4A991D53967900F56470 /* Login-Screen-1_0019_Icon-Bar.png */,
+				DA8B4A9A1D53967900F56470 /* Login-Screen-1_0020_Layer-0.png */,
+			);
+			name = Register/Login;
+			sourceTree = "<group>";
+		};
+		DA8B4A5A1D52F59B00F56470 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4B631D5514B200F56470 /* ContactUs.png */,
+				DA8B4B641D5514B200F56470 /* EmailAddress.png */,
+				DA8B4B651D5514B200F56470 /* EmailIcon.png */,
+				DA8B4B661D5514B200F56470 /* Message.png */,
+				DA8B4B671D5514B200F56470 /* Send.png */,
+				DA8B4B681D5514B200F56470 /* Subject.png */,
+				DA8B4B691D5514B200F56470 /* SubjectBox.png */,
+				DA8B4A5B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png */,
+				DA8B4A5C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png */,
+				DA8B4A5D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png */,
+				DA8B4A5E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png */,
+				DA8B4A5F1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png */,
+				DA8B4A601D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png */,
+				DA8B4A611D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png */,
+				DA8B4A621D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png */,
+				DA8B4A631D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png */,
+				DA8B4A641D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png */,
+				DA8B4A651D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png */,
+				DA8B4A661D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png */,
+				DA8B4A671D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0013_Login.png */,
+				DA8B4A681D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png */,
+				DA8B4A691D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png */,
+				DA8B4A6A1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png */,
+				DA8B4A6B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png */,
+				DA8B4A6C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
+		DA8B4A831D52FE3E00F56470 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		DA8B4A841D52FE4700F56470 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		DA8B4A851D52FE6900F56470 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DA02288C1D3342B900AA5A99 /* Main.storyboard */,
+				DA0228941D3342B900AA5A99 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		DA8B4B731D5522AC00F56470 /* Intro Pages */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A7F1D52FB6100F56470 /* IntroViewController.swift */,
+				DA0228D31D334AF000AA5A99 /* LogInViewController.swift */,
+				DA8B4B711D5521BE00F56470 /* Contact2ViewController.swift */,
+			);
+			name = "Intro Pages";
+			sourceTree = "<group>";
+		};
+		DA9EBD0A1D39C53600A71CAE /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A5A1D52F59B00F56470 /* Intro */,
+				DA8B4A831D52FE3E00F56470 /* Contact */,
+				DA8B4A571D52F21E00F56470 /* Register/Login */,
+				DA8B4A561D52F21900F56470 /* Misc */,
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
+		E4D9FEEE29284790FA240F70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD39FF1EEEE8289C407A8F9D /* Pods_AdrenaLens.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA0228841D3342B900AA5A99 /* AdrenaLens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA0228B01D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLens" */;
+			buildPhases = (
+				745DD5EE0A42D50BF02C0DE1 /* [CP] Check Pods Manifest.lock */,
+				DA0228811D3342B900AA5A99 /* Sources */,
+				DA0228821D3342B900AA5A99 /* Frameworks */,
+				DA0228831D3342B900AA5A99 /* Resources */,
+				9E4E9F34D40B73D507675A3A /* [CP] Embed Pods Frameworks */,
+				99D1B46187D8FE94E57FB063 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdrenaLens;
+			productName = AdrenaLens;
+			productReference = DA0228851D3342B900AA5A99 /* AdrenaLens.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA02289B1D3342B900AA5A99 /* AdrenaLensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA0228B31D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLensTests" */;
+			buildPhases = (
+				DA0228981D3342B900AA5A99 /* Sources */,
+				DA0228991D3342B900AA5A99 /* Frameworks */,
+				DA02289A1D3342B900AA5A99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA02289E1D3342B900AA5A99 /* PBXTargetDependency */,
+			);
+			name = AdrenaLensTests;
+			productName = AdrenaLensTests;
+			productReference = DA02289C1D3342B900AA5A99 /* AdrenaLensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA0228A61D3342B900AA5A99 /* AdrenaLensUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA0228B61D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLensUITests" */;
+			buildPhases = (
+				DA0228A31D3342B900AA5A99 /* Sources */,
+				DA0228A41D3342B900AA5A99 /* Frameworks */,
+				DA0228A51D3342B900AA5A99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA0228A91D3342BA00AA5A99 /* PBXTargetDependency */,
+			);
+			name = AdrenaLensUITests;
+			productName = AdrenaLensUITests;
+			productReference = DA0228A71D3342B900AA5A99 /* AdrenaLensUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA02287D1D3342B900AA5A99 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Harloch;
+				TargetAttributes = {
+					DA0228841D3342B900AA5A99 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					DA02289B1D3342B900AA5A99 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DA0228841D3342B900AA5A99;
+					};
+					DA0228A61D3342B900AA5A99 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = DA0228841D3342B900AA5A99;
+					};
+				};
+			};
+			buildConfigurationList = DA0228801D3342B900AA5A99 /* Build configuration list for PBXProject "AdrenaLens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA02287C1D3342B900AA5A99;
+			productRefGroup = DA0228861D3342B900AA5A99 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA0228841D3342B900AA5A99 /* AdrenaLens */,
+				DA02289B1D3342B900AA5A99 /* AdrenaLensTests */,
+				DA0228A61D3342B900AA5A99 /* AdrenaLensUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA0228831D3342B900AA5A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8B4A771D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png in Resources */,
+				DA8B4A6E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png in Resources */,
+				DA8B4B791D5523D000F56470 /* Name.png in Resources */,
+				DA8B4AAF1D53967900F56470 /* Login-Screen-1_0020_Layer-0.png in Resources */,
+				DA8B4A6F1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0003_Top-Line.png in Resources */,
+				DA8B4AAD1D53967900F56470 /* Welcome.png in Resources */,
+				DA0228961D3342B900AA5A99 /* LaunchScreen.storyboard in Resources */,
+				DA8B4A9F1D53967900F56470 /* BlackLine.png in Resources */,
+				DA8B4A791D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0013_Login.png in Resources */,
+				DA8B4A7D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0017_Icon-Bar.png in Resources */,
+				DA0228931D3342B900AA5A99 /* Assets.xcassets in Resources */,
+				DA8B4A741D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0008_Upload-Icon.png in Resources */,
+				DA8B4AAA1D53967900F56470 /* ArrowIcon.png in Resources */,
+				DA8B4A6D1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0001_AdrenaLens.png in Resources */,
+				DA8B4A761D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0010_login_rounded_up.png in Resources */,
+				DA8B4AA21D53967900F56470 /* YellowHouse.png in Resources */,
+				DA8B4A7E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0018_Layer-0.png in Resources */,
+				DA8B4AAB1D53967900F56470 /* PersonIcon.png in Resources */,
+				DA8B4B6B1D5514B200F56470 /* EmailAddress.png in Resources */,
+				DA8B4B6A1D5514B200F56470 /* ContactUs.png in Resources */,
+				DA8B4B7A1D5523D000F56470 /* Register.png in Resources */,
+				DA8B4A9B1D53967900F56470 /* Login-Screen-1_0000_Grid.png in Resources */,
+				DA8B4AA41D53967900F56470 /* YellowEye.png in Resources */,
+				DA8B4A721D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0006_User-Icon.png in Resources */,
+				DA9EBD0E1D39C85F00A71CAE /* Create-New.png in Resources */,
+				DA8B4B6C1D5514B200F56470 /* EmailIcon.png in Resources */,
+				DA8B4AA01D53967900F56470 /* YellowStar.png in Resources */,
+				DA8B4B6D1D5514B200F56470 /* Message.png in Resources */,
+				DA8B4A9E1D53967900F56470 /* BlackBar.png in Resources */,
+				DA9EBD0C1D39C84F00A71CAE /* SoLOz.png in Resources */,
+				DA8B4AAC1D53967900F56470 /* ContactAdrenaLens.png in Resources */,
+				DA8B4A7C1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0016_WELCOME!-.png in Resources */,
+				DA8B4B701D5514B200F56470 /* SubjectBox.png in Resources */,
+				DA8B4AA11D53967900F56470 /* YellowPerson.png in Resources */,
+				DA8B4B7B1D5523D000F56470 /* RegisterLabel.png in Resources */,
+				DA8B4AA71D53967900F56470 /* Password.png in Resources */,
+				DA8B4A591D52F23500F56470 /* LaunchScreen.png in Resources */,
+				DA02288E1D3342B900AA5A99 /* Main.storyboard in Resources */,
+				DA8B4B781D5523D000F56470 /* ConfirmPassword.png in Resources */,
+				DA8B4AA51D53967900F56470 /* UserName.png in Resources */,
+				DA8B4A781D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png in Resources */,
+				DA8B4B6E1D5514B200F56470 /* Send.png in Resources */,
+				DA8B4A9D1D53967900F56470 /* Login-Screen-1_0002_Layer-3.png in Resources */,
+				DA8B4B6F1D5514B200F56470 /* Subject.png in Resources */,
+				DA8B4AA61D53967900F56470 /* TextBox.png in Resources */,
+				DA8B4A7A1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0014_login_rounded_right.png in Resources */,
+				DA8B4A711D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0005_Favourited-Logo.png in Resources */,
+				DA8B4A751D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0009_Eye-Icon.png in Resources */,
+				DA8B4AA91D53967900F56470 /* LoginIcon.png in Resources */,
+				DA8B4AAE1D53967900F56470 /* Login-Screen-1_0019_Icon-Bar.png in Resources */,
+				DA8B4A7B1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0015_Contact-Logo.png in Resources */,
+				DA8B4AA31D53967900F56470 /* YellowUp.png in Resources */,
+				DA8B4A701D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0004_Icon-Line.png in Resources */,
+				DA8B4A9C1D53967900F56470 /* AdrenaLensYellow.png in Resources */,
+				DA0228BA1D33475900AA5A99 /* GoogleService-Info.plist in Resources */,
+				DA8B4AA81D53967900F56470 /* Login-Screen-1_0013_Password-Box.png in Resources */,
+				DA8B4A731D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0007_Home-Icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA02289A1D3342B900AA5A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA0228A51D3342B900AA5A99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		745DD5EE0A42D50BF02C0DE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99D1B46187D8FE94E57FB063 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E4E9F34D40B73D507675A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA0228811D3342B900AA5A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA8B4B721D5521BE00F56470 /* Contact2ViewController.swift in Sources */,
+				DA0228C51D3349A000AA5A99 /* RotateImage.swift in Sources */,
+				DA0228911D3342B900AA5A99 /* AdrenaLens.xcdatamodeld in Sources */,
+				DA0228C41D3349A000AA5A99 /* CommonUtils.swift in Sources */,
+				DA8B4A821D52FE1E00F56470 /* ContactViewController.swift in Sources */,
+				DA0228C81D3349A000AA5A99 /* AppState.swift in Sources */,
+				DA0228CE1D3349DA00AA5A99 /* MBProgressHUD.m in Sources */,
+				DA0228D51D334AF000AA5A99 /* MainScreenViewController.swift in Sources */,
+				DA0228C71D3349A000AA5A99 /* Extensions.swift in Sources */,
+				DA0228C91D3349A000AA5A99 /* AEXML.swift in Sources */,
+				DA0228D81D334AF000AA5A99 /* LogInViewController.swift in Sources */,
+				DA02288B1D3342B900AA5A99 /* ViewController.swift in Sources */,
+				DA0228C61D3349A000AA5A99 /* Constants.swift in Sources */,
+				DA0228891D3342B900AA5A99 /* AppDelegate.swift in Sources */,
+				DA0228D91D334AF000AA5A99 /* PhotoViewController.swift in Sources */,
+				DA0228D61D334AF000AA5A99 /* SignUpViewController.swift in Sources */,
+				DA0228C31D3349A000AA5A99 /* Helper.swift in Sources */,
+				DA8B4A801D52FB6100F56470 /* IntroViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA0228981D3342B900AA5A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA0228A11D3342B900AA5A99 /* AdrenaLensTests.swift in Sources */,
+				DA8B4BED1D57EB4E00F56470 /* ContactViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA0228A31D3342B900AA5A99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA0228AC1D3342BA00AA5A99 /* AdrenaLensUITests.swift in Sources */,
+				DA8B4BEC1D57EB2F00F56470 /* ContactViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA02289E1D3342B900AA5A99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA0228841D3342B900AA5A99 /* AdrenaLens */;
+			targetProxy = DA02289D1D3342B900AA5A99 /* PBXContainerItemProxy */;
+		};
+		DA0228A91D3342BA00AA5A99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA0228841D3342B900AA5A99 /* AdrenaLens */;
+			targetProxy = DA0228A81D3342BA00AA5A99 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA02288C1D3342B900AA5A99 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA02288D1D3342B900AA5A99 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA0228941D3342B900AA5A99 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA0228951D3342B900AA5A99 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA0228AE1D3342BA00AA5A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA0228AF1D3342BA00AA5A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA0228B11D3342BA00AA5A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = AdrenaLens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Project & Client Apps/AdrenaLens/AdrenaLens/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA0228B21D3342BA00AA5A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = AdrenaLens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Project & Client Apps/AdrenaLens/AdrenaLens/Bridging-Header.h";
+			};
+			name = Release;
+		};
+		DA0228B41D3342BA00AA5A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AdrenaLensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdrenaLens.app/AdrenaLens";
+			};
+			name = Debug;
+		};
+		DA0228B51D3342BA00AA5A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AdrenaLensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdrenaLens.app/AdrenaLens";
+			};
+			name = Release;
+		};
+		DA0228B71D3342BA00AA5A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AdrenaLensUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLensUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AdrenaLens;
+			};
+			name = Debug;
+		};
+		DA0228B81D3342BA00AA5A99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AdrenaLensUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLensUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AdrenaLens;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA0228801D3342B900AA5A99 /* Build configuration list for PBXProject "AdrenaLens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA0228AE1D3342BA00AA5A99 /* Debug */,
+				DA0228AF1D3342BA00AA5A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA0228B01D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA0228B11D3342BA00AA5A99 /* Debug */,
+				DA0228B21D3342BA00AA5A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA0228B31D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA0228B41D3342BA00AA5A99 /* Debug */,
+				DA0228B51D3342BA00AA5A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA0228B61D3342BA00AA5A99 /* Build configuration list for PBXNativeTarget "AdrenaLensUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA0228B71D3342BA00AA5A99 /* Debug */,
+				DA0228B81D3342BA00AA5A99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA02288F1D3342B900AA5A99 /* AdrenaLens.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA0228901D3342B900AA5A99 /* AdrenaLens.xcdatamodel */,
+			);
+			currentVersion = DA0228901D3342B900AA5A99 /* AdrenaLens.xcdatamodel */;
+			path = AdrenaLens.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA02287D1D3342B900AA5A99 /* Project object */;
+}
