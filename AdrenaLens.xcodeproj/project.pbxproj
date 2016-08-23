@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EC062371D6C4F110063AA5E /* FeaturedPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */; };
+		5EC062391D6C4F260063AA5E /* FindPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */; };
+		5EC0623B1D6C4F370063AA5E /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */; };
+		5EC0623D1D6C4F880063AA5E /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0623C1D6C4F880063AA5E /* SearchResultVC.swift */; };
+		5EC0623F1D6C4FA20063AA5E /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0623E1D6C4FA20063AA5E /* MyProfileVC.swift */; };
+		5EC062411D6C4FC50063AA5E /* UploadPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062401D6C4FC50063AA5E /* UploadPhotoVC.swift */; };
+		5EC062431D6C4FD50063AA5E /* UploadProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062421D6C4FD50063AA5E /* UploadProfileVC.swift */; };
+		5EC062451D6C50B40063AA5E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062441D6C50B40063AA5E /* HomeVC.swift */; };
+		5EC062481D6C75AC0063AA5E /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062471D6C75AC0063AA5E /* PhotoTableViewCell.swift */; };
 		676873DFA2D685FA074BC2FD /* Pods_AdrenaLens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD39FF1EEEE8289C407A8F9D /* Pods_AdrenaLens.framework */; };
 		DA0228891D3342B900AA5A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0228881D3342B900AA5A99 /* AppDelegate.swift */; };
 		DA02288B1D3342B900AA5A99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA02288A1D3342B900AA5A99 /* ViewController.swift */; };
@@ -109,6 +118,15 @@
 /* Begin PBXFileReference section */
 		16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.release.xcconfig"; sourceTree = "<group>"; };
 		3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.debug.xcconfig"; sourceTree = "<group>"; };
+		5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPhotosVC.swift; sourceTree = "<group>"; };
+		5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPhotosVC.swift; sourceTree = "<group>"; };
+		5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
+		5EC0623C1D6C4F880063AA5E /* SearchResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
+		5EC0623E1D6C4FA20063AA5E /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		5EC062401D6C4FC50063AA5E /* UploadPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPhotoVC.swift; sourceTree = "<group>"; };
+		5EC062421D6C4FD50063AA5E /* UploadProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadProfileVC.swift; sourceTree = "<group>"; };
+		5EC062441D6C50B40063AA5E /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5EC062471D6C75AC0063AA5E /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		CD39FF1EEEE8289C407A8F9D /* Pods_AdrenaLens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdrenaLens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0228851D3342B900AA5A99 /* AdrenaLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdrenaLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA0228881D3342B900AA5A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +250,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5EC062351D6C4E7F0063AA5E /* New Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5EC062461D6C5E860063AA5E /* Tab Screens */,
+				5EC0623C1D6C4F880063AA5E /* SearchResultVC.swift */,
+				5EC062421D6C4FD50063AA5E /* UploadProfileVC.swift */,
+			);
+			name = "New Screen";
+			sourceTree = "<group>";
+		};
+		5EC062461D6C5E860063AA5E /* Tab Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5EC062441D6C50B40063AA5E /* HomeVC.swift */,
+				5EC062471D6C75AC0063AA5E /* PhotoTableViewCell.swift */,
+				5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */,
+				5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */,
+				5EC062401D6C4FC50063AA5E /* UploadPhotoVC.swift */,
+				5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */,
+				5EC0623E1D6C4FA20063AA5E /* MyProfileVC.swift */,
+			);
+			name = "Tab Screens";
+			sourceTree = "<group>";
+		};
 		DA02287C1D3342B900AA5A99 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +307,7 @@
 				DA0228D41D334AF000AA5A99 /* PhotoViewController.swift */,
 				DA8B4A811D52FE1E00F56470 /* ContactViewController.swift */,
 				DA8B4B731D5522AC00F56470 /* Intro Pages */,
+				5EC062351D6C4E7F0063AA5E /* New Screen */,
 				DA8B4A851D52FE6900F56470 /* Storyboards */,
 				DA8B4A841D52FE4700F56470 /* Settings */,
 				DA0228BB1D33497500AA5A99 /* Helper Files */,
@@ -681,23 +724,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC0623B1D6C4F370063AA5E /* PhotoDetailVC.swift in Sources */,
 				DA8B4B721D5521BE00F56470 /* Contact2ViewController.swift in Sources */,
 				DA0228C51D3349A000AA5A99 /* RotateImage.swift in Sources */,
 				DA0228911D3342B900AA5A99 /* AdrenaLens.xcdatamodeld in Sources */,
 				DA0228C41D3349A000AA5A99 /* CommonUtils.swift in Sources */,
+				5EC0623D1D6C4F880063AA5E /* SearchResultVC.swift in Sources */,
 				DA8B4A821D52FE1E00F56470 /* ContactViewController.swift in Sources */,
+				5EC0623F1D6C4FA20063AA5E /* MyProfileVC.swift in Sources */,
 				DA0228C81D3349A000AA5A99 /* AppState.swift in Sources */,
 				DA0228CE1D3349DA00AA5A99 /* MBProgressHUD.m in Sources */,
 				DA0228D51D334AF000AA5A99 /* MainScreenViewController.swift in Sources */,
+				5EC062371D6C4F110063AA5E /* FeaturedPhotosVC.swift in Sources */,
 				DA0228C71D3349A000AA5A99 /* Extensions.swift in Sources */,
 				DA0228C91D3349A000AA5A99 /* AEXML.swift in Sources */,
+				5EC062481D6C75AC0063AA5E /* PhotoTableViewCell.swift in Sources */,
 				DA0228D81D334AF000AA5A99 /* LogInViewController.swift in Sources */,
+				5EC062391D6C4F260063AA5E /* FindPhotosVC.swift in Sources */,
 				DA02288B1D3342B900AA5A99 /* ViewController.swift in Sources */,
+				5EC062451D6C50B40063AA5E /* HomeVC.swift in Sources */,
 				DA0228C61D3349A000AA5A99 /* Constants.swift in Sources */,
+				5EC062431D6C4FD50063AA5E /* UploadProfileVC.swift in Sources */,
 				DA0228891D3342B900AA5A99 /* AppDelegate.swift in Sources */,
 				DA0228D91D334AF000AA5A99 /* PhotoViewController.swift in Sources */,
 				DA0228D61D334AF000AA5A99 /* SignUpViewController.swift in Sources */,
 				DA0228C31D3349A000AA5A99 /* Helper.swift in Sources */,
+				5EC062411D6C4FC50063AA5E /* UploadPhotoVC.swift in Sources */,
 				DA8B4A801D52FB6100F56470 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,7 +900,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Project & Client Apps/AdrenaLens/AdrenaLens/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/iparth/Desktop/iWork/Dustin Allen - Harloch/4 AderenaLens/23Aug 9Am Starts from/AdrenaLens-master/AdrenaLens/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -863,7 +915,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harloch.AdrenaLens;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dustin/Desktop/Project & Client Apps/AdrenaLens/AdrenaLens/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/iparth/Desktop/iWork/Dustin Allen - Harloch/4 AderenaLens/23Aug 9Am Starts from/AdrenaLens-master/AdrenaLens/Bridging-Header.h";
 			};
 			name = Release;
 		};
