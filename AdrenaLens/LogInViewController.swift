@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+
 @objc(FirebaseSignInViewController)
 class FirebaseSignInViewController: UIViewController {
     
@@ -53,29 +57,31 @@ class FirebaseSignInViewController: UIViewController {
     
     @IBAction func didTapSignIn(sender: AnyObject) {
         
+        callLoginAPI()
+        
         // Sign In with credentials.
-        let email = emailField.text!
-        let password = passwordField.text!
-        if email.isEmpty || password.isEmpty {
-            CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "Email or password is missing.")
-        }
-        else{
-            CommonUtils.sharedUtils.showProgress(self.view, label: "Signing in...")
-            FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
-                dispatch_async(dispatch_get_main_queue(), {
-                    CommonUtils.sharedUtils.hideProgress()
-                })
-                if let error = error {
-                    CommonUtils.sharedUtils.showAlert(self, title: "Error", message: error.localizedDescription)
-                    print(error.localizedDescription)
-                }
-                else{
-                    //                    self.signedIn(user!)
-                    let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
-                    self.navigationController?.pushViewController(mainScreenViewController, animated: true)
-                }
-            }
-        }
+//        let email = emailField.text!
+//        let password = passwordField.text!
+//        if email.isEmpty || password.isEmpty {
+//            CommonUtils.sharedUtils.showAlert(self, title: "Error", message: "Email or password is missing.")
+//        }
+//        else{
+//            CommonUtils.sharedUtils.showProgress(self.view, label: "Signing in...")
+//            FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    CommonUtils.sharedUtils.hideProgress()
+//                })
+//                if let error = error {
+//                    CommonUtils.sharedUtils.showAlert(self, title: "Error", message: error.localizedDescription)
+//                    print(error.localizedDescription)
+//                }
+//                else{
+//                    //                    self.signedIn(user!)
+//                    let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
+//                    self.navigationController?.pushViewController(mainScreenViewController, animated: true)
+//                }
+//            }
+//        }
     }
     
     @IBAction func contactButton(sender: AnyObject) {
@@ -83,6 +89,57 @@ class FirebaseSignInViewController: UIViewController {
         self.navigationController?.pushViewController(contactViewController, animated: true)
     }
     
+    func callLoginAPI()
+    {
+        let email = self.emailField.text!
+        let password = self.passwordField.text!
+        // make sure the user entered both email & password
+        if email != "" && password != "" {
+            CommonUtils.sharedUtils.showProgress(self.view, label: "Signing in...")
+            
+            let Parameters = ["submitted" : "1",
+                //"email" : email,
+                "username" : email,
+                "password" : password]
+            
+            Alamofire.request(.POST, url_Login, parameters: Parameters)
+                .validate()
+                .responseJSON { response in
+                    CommonUtils.sharedUtils.hideProgress()
+                    switch response.result
+                    {
+                    case .Success(let data):
+                        let json = JSON(data)
+                        print(json.dictionary)
+                        
+                        if let status = json["status"].string, result = json["result"].dictionaryObject where status == "1" {
+                            
+                            userDetail = result
+                            NSUserDefaults.standardUserDefaults().setObject(result, forKey: "userDetail")
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                            
+                            //Go To Main Screen
+                            let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
+                            self.navigationController?.pushViewController(mainScreenViewController, animated: true)
+                        } else  if let msg = json["msg"].string {
+                            SVProgressHUD.showSuccessWithStatus(msg)
+                        } else {
+                            SVProgressHUD.showSuccessWithStatus("Unable to sign in!")
+                        }
+                        
+                        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
+                        
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
+                        //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
+                    }
+            }
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Enter email & password!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alert.addAction(action)
+        }
+    }
     
     func setDisplayName(user: FIRUser) {
         let changeRequest = user.profileChangeRequest()

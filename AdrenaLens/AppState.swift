@@ -18,3 +18,5 @@ class AppState: NSObject {
     var photoUrl: NSURL?    
     var currentUser: FIRDataSnapshot!
 }
+
+var userDetail:Dictionary<String,AnyObject> = [:]

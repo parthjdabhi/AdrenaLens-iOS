@@ -20,4 +20,11 @@ target 'AdrenaLens' do
     pod 'OAuthSwift', '~> 0.5.0'
     pod 'SDWebImage', '~>3.8'
     pod 'IQKeyboardManagerSwift'
+    
+    pod 'Alamofire', '~> 3.4'
+    pod 'AlamofireNetworkActivityIndicator', '~> 1.0'
+    ## pod 'AlamofireSwiftyJSON', '~> 0.1'
+    pod 'SwiftyJSON', '~> 2.3'
+    pod 'SVProgressHUD', '~> 1.1'
+    
 end

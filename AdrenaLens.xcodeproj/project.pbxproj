@@ -118,6 +118,7 @@
 /* Begin PBXFileReference section */
 		16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.release.xcconfig"; sourceTree = "<group>"; };
 		3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.debug.xcconfig"; sourceTree = "<group>"; };
+		5E341EEB1D6ED37A00339C8E /* conthrax-sb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "conthrax-sb.ttf"; sourceTree = "<group>"; };
 		5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPhotosVC.swift; sourceTree = "<group>"; };
 		5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPhotosVC.swift; sourceTree = "<group>"; };
 		5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
@@ -313,6 +314,7 @@
 				DA0228BB1D33497500AA5A99 /* Helper Files */,
 				DA9EBD0A1D39C53600A71CAE /* Pictures */,
 				DA0228921D3342B900AA5A99 /* Assets.xcassets */,
+				5E341EEB1D6ED37A00339C8E /* conthrax-sb.ttf */,
 				DA0228B91D33475900AA5A99 /* GoogleService-Info.plist */,
 				DA0228971D3342B900AA5A99 /* Info.plist */,
 				DA02288F1D3342B900AA5A99 /* AdrenaLens.xcdatamodeld */,

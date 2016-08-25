@@ -10,12 +10,16 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKShareKit
 import Firebase
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var confirmPasswordField: UITextField!
     @IBOutlet var usernameField: UITextField!
-    @IBOutlet var usersNameField: UITextField!
+    @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     var ref:FIRDatabaseReference!
@@ -35,10 +39,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         usernameField.leftView = paddingForThird
         usernameField.leftViewMode = UITextFieldViewMode .Always
         usernameField.font = UIFont(name: usernameField.font!.fontName, size: 20)
-        let paddingForFourth = UIView(frame: CGRectMake(0, 0, 10, self.usersNameField.frame.size.height))
-        usersNameField.leftView = paddingForFourth
-        usersNameField.leftViewMode = UITextFieldViewMode .Always
-        usersNameField.font = UIFont(name: usersNameField.font!.fontName, size: 20)
+        let paddingForFourth = UIView(frame: CGRectMake(0, 0, 10, self.nameField.frame.size.height))
+        nameField.leftView = paddingForFourth
+        nameField.leftViewMode = UITextFieldViewMode .Always
+        nameField.font = UIFont(name: nameField.font!.fontName, size: 20)
         let paddingForFifth = UIView(frame: CGRectMake(0, 0, 10, self.emailField.frame.size.height))
         emailField.leftView = paddingForFifth
         emailField.leftViewMode = UITextFieldViewMode .Always
@@ -66,26 +70,52 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return UIStatusBarStyle.LightContent
     }
     
-    @IBAction func createProfile(sender: AnyObject) {
+    @IBAction func createProfile(sender: AnyObject)
+    {
+        let name = self.nameField.text!
+        let username = self.usernameField.text!
         let email = self.emailField.text!
         let password = self.passwordField.text!
         // make sure the user entered both email & password
         if email != "" && password != "" {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Registering...")
-            FIRAuth.auth()?.createUserWithEmail(email, password: password, completion:  { (user, error) in
-                if error == nil {
-                    FIREmailPasswordAuthProvider.credentialWithEmail(email, password: password)
-                    self.ref.child("users").child(user!.uid).setValue(["usersName": self.usersNameField.text!, "username": self.usernameField.text!])
+            
+            let Parameters = ["submitted": "1",
+                "name" : name,
+                "email" : email,
+                "username" : username,
+                "password" : password]
+            
+            Alamofire.request(.POST, url_Register, parameters: Parameters)
+                .validate()
+                .responseJSON { response in
                     CommonUtils.sharedUtils.hideProgress()
-                    let photoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController!
-                    self.navigationController?.pushViewController(photoViewController, animated: true)
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), {() -> Void in
-                        CommonUtils.sharedUtils.hideProgress()
-                        CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
-                    })
+                switch response.result
+                {
+                    case .Success(let data):
+                        let json = JSON(data)
+                        let name = json["name"].stringValue
+                        
+                        print(json.dictionary)
+                        print(json.dictionaryObject)
+                        
+                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                            print(msg)
+                            SVProgressHUD.showSuccessWithStatus(msg)
+                            self.navigationController?.popViewControllerAnimated(true)
+//                            let photoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController!
+//                            self.navigationController?.pushViewController(photoViewController, animated: true)
+                        } else {
+                            SVProgressHUD.showSuccessWithStatus("Unable to register!")
+                            //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
+                        }
+                    
+                    //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
+                    
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
                 }
-            })
+            }
         } else {
             let alert = UIAlertController(title: "Error", message: "Enter email & password!", preferredStyle: .Alert)
             let action = UIAlertAction(title: "OK", style: .Default, handler: nil)

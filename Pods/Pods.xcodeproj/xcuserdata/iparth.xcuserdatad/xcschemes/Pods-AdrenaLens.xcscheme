@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F70A9EF4B401138E67C089C4044A4F4"
+               BlueprintIdentifier = "B67024613077E6EFADC4BBA4ADB76C06"
                BuildableName = "Pods_AdrenaLens.framework"
                BlueprintName = "Pods-AdrenaLens"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F70A9EF4B401138E67C089C4044A4F4"
+            BlueprintIdentifier = "B67024613077E6EFADC4BBA4ADB76C06"
             BuildableName = "Pods_AdrenaLens.framework"
             BlueprintName = "Pods-AdrenaLens"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F70A9EF4B401138E67C089C4044A4F4"
-            BuildableName = "Pods_AdrenaLens.framework"
-            BlueprintName = "Pods-AdrenaLens"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

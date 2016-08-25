@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J4B-6j-Pbb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J4B-6j-Pbb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="conthrax-sb.ttf">
+            <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Firebase Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -157,7 +166,6 @@
         <!--Navigation Controller-->
         <scene sceneID="R2X-ZE-0rm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ef-GO-8T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="navHome" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="OqO-8K-3rt" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VcM-KB-9Dw">
@@ -168,6 +176,7 @@
                         <segue destination="fXP-Q8-zl6" kind="relationship" relationship="rootViewController" id="Fdk-Hl-olV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ef-GO-8T9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2095.5" y="310.5"/>
         </scene>
@@ -291,13 +300,6 @@
                                     <action selector="starButton:" destination="aI0-4A-Y6X" eventType="touchUpInside" id="C1O-pV-Wzc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEQ-X4-etL">
-                                <rect key="frame" x="163" y="621" width="50" height="33"/>
-                                <state key="normal" image="YellowEye.png"/>
-                                <connections>
-                                    <action selector="eyeButton:" destination="aI0-4A-Y6X" eventType="touchUpInside" id="Ss1-rU-Bq0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai4-kF-OOu">
                                 <rect key="frame" x="244" y="621" width="38" height="33"/>
                                 <state key="normal" image="YellowUp.png"/>
@@ -328,6 +330,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEQ-X4-etL">
+                                <rect key="frame" x="162" y="621" width="50" height="33"/>
+                                <state key="normal" image="YellowEye.png"/>
+                                <connections>
+                                    <action selector="eyeButton:" destination="aI0-4A-Y6X" eventType="touchUpInside" id="Ss1-rU-Bq0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -741,9 +750,9 @@
                     <connections>
                         <outlet property="confirmPasswordField" destination="AIb-zi-Vsa" id="FZx-Hg-Sda"/>
                         <outlet property="emailField" destination="j65-Pv-jJs" id="2k5-E6-vOW"/>
+                        <outlet property="nameField" destination="vZt-sL-iJX" id="3B3-3D-nCn"/>
                         <outlet property="passwordField" destination="L3Y-ZC-yWG" id="inN-PK-9aF"/>
                         <outlet property="usernameField" destination="8ro-H6-H2Z" id="lkN-30-J7Z"/>
-                        <outlet property="usersNameField" destination="vZt-sL-iJX" id="tya-Ro-6yd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gm3-JV-VHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -859,15 +868,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-yZ-spn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duu-Sq-0mi">
-                                        <rect key="frame" x="113" y="24" width="134" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOB-lM-i3Y">
+                                        <rect key="frame" x="88" y="24" width="199" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="RzP-Cf-pzq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="IOB-lM-i3Y" firstAttribute="centerX" secondItem="fPw-yZ-spn" secondAttribute="centerX" id="H0w-b1-d0N"/>
+                                    <constraint firstItem="IOB-lM-i3Y" firstAttribute="top" secondItem="fPw-yZ-spn" secondAttribute="top" constant="24" id="bx9-ye-yEQ"/>
                                     <constraint firstAttribute="height" constant="64" id="fe8-gB-uJ7"/>
                                 </constraints>
                             </view>
@@ -995,7 +1009,7 @@
                             <constraint firstItem="MpC-2q-gPr" firstAttribute="top" secondItem="fPw-yZ-spn" secondAttribute="bottom" id="pkf-U6-94V"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="WMS-ki-312"/>
+                    <tabBarItem key="tabBarItem" image="ic_ice" selectedImage="ic_ice" id="WMS-ki-312"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnLocation" destination="BOU-3z-seb" id="mdV-VO-dQC"/>
@@ -1151,15 +1165,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWV-iQ-fmO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-gA-1Eo">
-                                        <rect key="frame" x="113" y="24" width="134" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rZ-18-87C">
+                                        <rect key="frame" x="88" y="24" width="199" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="vD6-dF-VsX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="8rZ-18-87C" firstAttribute="top" secondItem="XWV-iQ-fmO" secondAttribute="top" constant="24" id="0yh-L4-J6L"/>
+                                    <constraint firstItem="8rZ-18-87C" firstAttribute="centerX" secondItem="XWV-iQ-fmO" secondAttribute="centerX" id="2kd-bU-Wm6"/>
                                     <constraint firstAttribute="height" constant="64" id="JUn-Ob-Y94"/>
                                 </constraints>
                             </view>
@@ -1177,7 +1196,7 @@
                             <constraint firstAttribute="trailing" secondItem="cBS-T7-Ut0" secondAttribute="trailing" constant="20" id="pIO-Fv-uGw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="Tcy-LL-f3M"/>
+                    <tabBarItem key="tabBarItem" image="ic_upload" id="Tcy-LL-f3M"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnLocation" destination="QNq-QT-fgs" id="INh-bK-dgP"/>
@@ -1261,35 +1280,35 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-LN-uyb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-LN-uyb">
                                         <rect key="frame" x="8" y="8" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="BK0-EG-CGG"/>
                                             <constraint firstAttribute="height" constant="32" id="PQQ-Py-w4t"/>
                                         </constraints>
-                                        <state key="normal" title="Set"/>
+                                        <state key="normal" image="ic_setting"/>
                                         <connections>
                                             <action selector="actionSetting:" destination="2uq-h6-mjI" eventType="touchUpInside" id="axe-Td-6Ii"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaU-V6-8RI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaU-V6-8RI">
                                         <rect key="frame" x="335" y="8" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="JPs-iJ-OEx"/>
                                             <constraint firstAttribute="width" constant="32" id="jm7-ow-Bsk"/>
                                         </constraints>
-                                        <state key="normal" title="Edit"/>
+                                        <state key="normal" image="ic_edit"/>
                                         <connections>
                                             <action selector="actionEditProfile:" destination="2uq-h6-mjI" eventType="touchUpInside" id="voV-cH-T43"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddv-QT-T8e">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddv-QT-T8e">
                                         <rect key="frame" x="335" y="48" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="hnx-JG-Kj4"/>
                                             <constraint firstAttribute="width" constant="32" id="jny-5L-uZh"/>
                                         </constraints>
-                                        <state key="normal" title="Up"/>
+                                        <state key="normal" image="ic_upload"/>
                                         <connections>
                                             <action selector="actionUploadProfile:" destination="2uq-h6-mjI" eventType="touchUpInside" id="6Y9-RZ-TBH"/>
                                         </connections>
@@ -1380,7 +1399,9 @@
                             <constraint firstItem="ZJt-22-GDC" firstAttribute="leading" secondItem="Me2-ov-o34" secondAttribute="leading" id="uRX-J6-Jug"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="t1g-Sf-ybm"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_user" id="t1g-Sf-ybm">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnEdit" destination="aaU-V6-8RI" id="ZPX-Br-TrU"/>
@@ -1407,10 +1428,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2uq-h6-mjI" kind="relationship" relationship="viewControllers" id="Fc5-3d-KAr"/>
                         <segue destination="zKI-op-xFF" kind="relationship" relationship="viewControllers" id="kKL-ap-C08"/>
-                        <segue destination="FAC-VS-CEq" kind="relationship" relationship="viewControllers" id="Oad-mR-jC9"/>
                         <segue destination="nl2-6a-vMB" kind="relationship" relationship="viewControllers" id="2oL-tE-vMx"/>
+                        <segue destination="2uq-h6-mjI" kind="relationship" relationship="viewControllers" id="Fc5-3d-KAr"/>
+                        <segue destination="FAC-VS-CEq" kind="relationship" relationship="viewControllers" id="Oad-mR-jC9"/>
                         <segue destination="2qt-fS-Rul" kind="relationship" relationship="viewControllers" id="cCN-c4-V6v"/>
                     </connections>
                 </tabBarController>
@@ -1433,9 +1454,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOb-fr-ScR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-ZG-KeP">
-                                        <rect key="frame" x="113" y="24" width="134" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqJ-Po-bD3">
+                                        <rect key="frame" x="88" y="24" width="199" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="oyM-Xy-Lux"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1443,6 +1467,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="JFV-p0-6K6"/>
+                                    <constraint firstItem="EqJ-Po-bD3" firstAttribute="top" secondItem="TOb-fr-ScR" secondAttribute="top" constant="24" id="XNZ-SH-2SZ"/>
+                                    <constraint firstItem="EqJ-Po-bD3" firstAttribute="centerX" secondItem="TOb-fr-ScR" secondAttribute="centerX" id="l4r-c1-BdK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPx-ND-rsT">
@@ -1524,7 +1550,7 @@
                             <constraint firstItem="jiy-zQ-Toi" firstAttribute="top" secondItem="TPx-ND-rsT" secondAttribute="bottom" id="sQ5-q1-SmW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="favorites" id="Bit-B8-l7v"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_star" id="Bit-B8-l7v"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cvPhotos" destination="jiy-zQ-Toi" id="tmI-0Z-yxa"/>
@@ -1549,15 +1575,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TES-nL-kMj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-jg-mAR">
-                                        <rect key="frame" x="113" y="24" width="134" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1K-jg-mAR">
+                                        <rect key="frame" x="88" y="24" width="199" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="0lL-iI-zty"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="p1K-jg-mAR" firstAttribute="top" secondItem="TES-nL-kMj" secondAttribute="top" constant="24" id="0fA-kz-Wx0"/>
+                                    <constraint firstItem="p1K-jg-mAR" firstAttribute="centerX" secondItem="TES-nL-kMj" secondAttribute="centerX" id="7SW-FB-QIF"/>
                                     <constraint firstAttribute="height" constant="64" id="ZY4-cC-ETP"/>
                                 </constraints>
                             </view>
@@ -1574,13 +1605,13 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7do-u4-1lZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7do-u4-1lZ">
                                         <rect key="frame" x="8" y="5" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="56m-Jo-zhb"/>
                                             <constraint firstAttribute="width" constant="30" id="EdB-M7-HiV"/>
                                         </constraints>
-                                        <state key="normal" title="Set"/>
+                                        <state key="normal" image="ic_setting"/>
                                         <connections>
                                             <action selector="actionSetting:" destination="zKI-op-xFF" eventType="touchUpInside" id="TD7-5S-Czj"/>
                                         </connections>
@@ -1692,7 +1723,7 @@
                             <constraint firstItem="EFO-6f-0ka" firstAttribute="leading" secondItem="X4z-QQ-aOv" secondAttribute="leading" id="wFb-6C-a4Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="OAD-x0-gbH"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_home" selectedImage="ic_home" id="OAD-x0-gbH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="btnSetting" destination="HF0-3Q-2xc" id="5ch-Fg-zLI"/>
@@ -1811,16 +1842,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-a7-mON">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ka-4y-Q9E">
-                                        <rect key="frame" x="113" y="24" width="134" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adrenalens" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnG-6D-bUm">
+                                        <rect key="frame" x="88" y="24" width="199" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="XzN-Pp-KGf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="26"/>
                                         <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="pnG-6D-bUm" firstAttribute="top" secondItem="ECi-a7-mON" secondAttribute="top" constant="24" id="NtL-xn-mba"/>
                                     <constraint firstAttribute="height" constant="64" id="T8o-eB-bpE"/>
+                                    <constraint firstItem="pnG-6D-bUm" firstAttribute="centerX" secondItem="ECi-a7-mON" secondAttribute="centerX" id="iof-lT-Ane"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1878,5 +1914,12 @@
         <image name="YellowPerson.png" width="86" height="92"/>
         <image name="YellowStar.png" width="94" height="90"/>
         <image name="YellowUp.png" width="91" height="90"/>
+        <image name="ic_edit" width="42" height="42"/>
+        <image name="ic_home" width="42" height="42"/>
+        <image name="ic_ice" width="42" height="42"/>
+        <image name="ic_setting" width="42" height="42"/>
+        <image name="ic_star" width="42" height="42"/>
+        <image name="ic_upload" width="42" height="42"/>
+        <image name="ic_user" width="42" height="42"/>
     </resources>
 </document>

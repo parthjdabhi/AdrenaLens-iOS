@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (3.4.1)
+  - AlamofireNetworkActivityIndicator (1.0.1):
+    - Alamofire (~> 3.3)
   - Bolts (1.8.1):
     - Bolts/AppLinks (= 1.8.1)
     - Bolts/Tasks (= 1.8.1)
@@ -78,8 +81,12 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (1.1.3)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - AlamofireNetworkActivityIndicator (~> 1.0)
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -93,8 +100,12 @@ DEPENDENCIES:
   - Mixpanel
   - OAuthSwift (~> 0.5.0)
   - SDWebImage (~> 3.8)
+  - SVProgressHUD (~> 1.1)
+  - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
   Bolts: 89c0c6dd1b9c975a3452a62d57a6be6739e5f433
   FBSDKCoreKit: 2807fe0da2ddb49a1469da6d6ff597f99912980f
   FBSDKLoginKit: 6d350cb6a22d6956e9d078885de6ee8a0ebc51b4
@@ -118,7 +129,9 @@ SPEC CHECKSUMS:
   Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
   OAuthSwift: 1ef042d4362e755e24a78f158d817245641a5d24
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 3df19f9999cd77c9cf9fd17d632e6f16b779798c
+PODFILE CHECKSUM: 6907a4588480923419d56e9ba5a39c12be4c8c97
 
 COCOAPODS: 1.0.1

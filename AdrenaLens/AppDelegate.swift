@@ -43,8 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         IQKeyboardManager.sharedManager().enable = true
         
         
-        if let user = FIRAuth.auth()?.currentUser
+        if let user = NSUserDefaults.standardUserDefaults().objectForKey("userDetail") as? Dictionary<String,AnyObject>
         {
+            print(user)
+            userDetail = user
+            
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let navigationController = mainStoryboard.instantiateViewControllerWithIdentifier("navHome") as? UINavigationController
             navigationController?.navigationBarHidden = true // or not, your choice.
