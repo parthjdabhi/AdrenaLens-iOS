@@ -122,9 +122,9 @@ class FirebaseSignInViewController: UIViewController {
                             let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
                             self.navigationController?.pushViewController(mainScreenViewController, animated: true)
                         } else  if let msg = json["msg"].string {
-                            SVProgressHUD.showSuccessWithStatus(msg)
+                            SVProgressHUD.showErrorWithStatus(msg)
                         } else {
-                            SVProgressHUD.showSuccessWithStatus("Unable to sign in!")
+                            SVProgressHUD.showErrorWithStatus("Unable to sign in!")
                         }
                         
                         //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.

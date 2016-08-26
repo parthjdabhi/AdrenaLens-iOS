@@ -85,6 +85,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 "email" : email,
                 "username" : username,
                 "password" : password]
+            print(Parameters)
             
             Alamofire.request(.POST, url_Register, parameters: Parameters)
                 .validate()
@@ -93,25 +94,27 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 switch response.result
                 {
                     case .Success(let data):
-                        let json = JSON(data)
-                        let name = json["name"].stringValue
                         
+                        let json = JSON(data)
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                        if let status = json["status"].string,
+                            msg = json["msg"].string,
+                            result = json["result"].dictionaryObject
+                            where status == "1"
+                        {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)
-                            self.navigationController?.popViewControllerAnimated(true)
-//                            let photoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController!
-//                            self.navigationController?.pushViewController(photoViewController, animated: true)
+                            userDetail = result
+                            
+                            //self.navigationController?.popViewControllerAnimated(true)
+                            let photoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController!
+                            self.navigationController?.pushViewController(photoViewController, animated: true)
                         } else {
-                            SVProgressHUD.showSuccessWithStatus("Unable to register!")
+                            SVProgressHUD.showErrorWithStatus("Unable to register!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
                         }
-                    
-                    //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
-                    
                     case .Failure(let error):
                         print("Request failed with error: \(error)")
                 }
@@ -121,7 +124,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alert.addAction(action)
         }
+        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
     }
+    
     /*
     @IBAction func facebookButton(sender: AnyObject) {
         

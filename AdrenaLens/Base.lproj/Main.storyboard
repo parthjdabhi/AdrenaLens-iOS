@@ -192,13 +192,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tG-5d-hiK">
-                                <rect key="frame" x="104" y="247" width="167" height="123"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-xj-hJJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-xj-hJJ">
                                 <rect key="frame" x="149" y="411" width="77" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="77" id="Aod-qU-N1M"/>
@@ -209,13 +203,31 @@
                                     <action selector="logoutButton:" destination="fXP-Q8-zl6" eventType="touchUpInside" id="o9f-eb-HuP"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-gf-lvF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-gf-lvF">
                                 <rect key="frame" x="97" y="85" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="FDp-b3-rY8"/>
+                                    <constraint firstAttribute="height" constant="180" id="cqh-ns-Pt3"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tG-5d-hiK">
+                                <rect key="frame" x="104" y="273" width="167" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="heS-Lm-7ec"/>
+                                    <constraint firstAttribute="height" constant="97" id="mKg-XS-4kQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U4G-xj-hJJ" firstAttribute="top" secondItem="8tG-5d-hiK" secondAttribute="bottom" constant="41" id="7tl-gI-DTm"/>
+                            <constraint firstItem="8tG-5d-hiK" firstAttribute="centerX" secondItem="J1U-Pk-8dX" secondAttribute="centerX" id="2eT-B6-Mtq"/>
+                            <constraint firstItem="xfI-gf-lvF" firstAttribute="top" secondItem="OcL-mc-90y" secondAttribute="bottom" constant="65" id="Cy8-td-wyS"/>
+                            <constraint firstItem="8tG-5d-hiK" firstAttribute="top" secondItem="xfI-gf-lvF" secondAttribute="bottom" constant="8" id="Dh9-Fg-8H2"/>
+                            <constraint firstItem="xfI-gf-lvF" firstAttribute="centerX" secondItem="J1U-Pk-8dX" secondAttribute="centerX" id="DkV-CU-6wF"/>
+                            <constraint firstItem="U4G-xj-hJJ" firstAttribute="top" secondItem="8tG-5d-hiK" secondAttribute="bottom" constant="41" id="Nux-4F-5k9"/>
                             <constraint firstItem="U4G-xj-hJJ" firstAttribute="centerX" secondItem="J1U-Pk-8dX" secondAttribute="centerX" id="QOg-Lk-cqA"/>
                         </constraints>
                     </view>

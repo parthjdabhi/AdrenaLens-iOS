@@ -31,7 +31,7 @@ let BaseURL  = "http://adrenalensapp.com/API/"
 let url_Login  = BaseURL + "login.php"
 let url_Register  = BaseURL + "register.php"
 let url_SetProfile  = BaseURL + ""
-let url_UpdateProfile  = BaseURL + "profile.php"
+let url_SetProfilePic  = BaseURL + "profile.php"
 
 //Image API
 let url_AddPhoto  = BaseURL + ""
@@ -60,14 +60,20 @@ let url_ListPhoto  = BaseURL + ""
  
  http://adrenalensapp.com/API/profile.php
  
- Parameter :
  
  submitted = 1
- user_id
- name
- email
  unique_id
- file
+ user_id
+ profile_photo
+ 
+ {
+ "profile_photo" = "http://adrenalensapp.com/API/app-users-upload/ios265/profile_image.png";
+ "unique_id" = ios265;
+ "user_email" = "ios2@gmail.com";
+ "user_id" = 20;
+ "user_name" = ios2;
+ }
+ 
  */
 
 /*

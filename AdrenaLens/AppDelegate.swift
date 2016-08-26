@@ -16,6 +16,7 @@ import FBSDKLoginKit
 import Firebase
 import OAuthSwift
 import IQKeyboardManagerSwift
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -42,7 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         IQKeyboardManager.sharedManager().enable = true
         
-        
+        SVProgressHUD.setDefaultMaskType(.Black)
+        SVProgressHUD.setRingThickness(2)
+        SVProgressHUD.setAnimationCurve(UIViewAnimationCurve.Linear)
+        SVProgressHUD.setForegroundColor(UIColor.orangeColor())
+
         if let user = NSUserDefaults.standardUserDefaults().objectForKey("userDetail") as? Dictionary<String,AnyObject>
         {
             print(user)

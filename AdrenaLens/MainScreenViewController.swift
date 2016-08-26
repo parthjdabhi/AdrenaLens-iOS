@@ -20,28 +20,10 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = FIRDatabase.database().reference()
-        user = FIRAuth.auth()?.currentUser
-        
-//        let userID = FIRAuth.auth()?.currentUser?.uid
-//        ref.child("users").child(userID!).observeEventType(.Value, withBlock: { (snapshot) in
-//            AppState.sharedInstance.currentUser = snapshot
-//            if let base64String = snapshot.value!["image"] as? String {
-//                // decode image
-//                self.profilePicture.image = CommonUtils.sharedUtils.decodeImage(base64String)
-//            } else {
-//                print("No Profile Picture")
-//            }
-//            /*
-//            if AppState.sharedInstance.currentUser.value?["userFirstName"] != nil && AppState.sharedInstance.currentUser.value?["userLastName"] != nil {
-//            let firstNameStr = AppState.sharedInstance.currentUser.value?["userFirstName"] as! String
-//            let lastNameStr = AppState.sharedInstance.currentUser.value?["userLastName"] as! String
-//            self.profileInfo.text = "\(firstNameStr) \(lastNameStr)"
-//            }*/
-//        })
-//        { (error) in
-//            print(error.localizedDescription)
-//        }
+        //profile_photo
+        if let profile_photo = userDetail["profile_photo"] as? String {
+            profilePicture.sd_setImageWithURL(NSURL(string: profile_photo))
+        }
         
     }
     

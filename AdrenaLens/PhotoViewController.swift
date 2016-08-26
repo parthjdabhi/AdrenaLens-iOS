@@ -9,12 +9,16 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
 
 class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBOutlet var photo: UIImageView!
+    
     var ref:FIRDatabaseReference!
     var user: FIRUser!
-    
     var imgTaken = false
     
     override func viewDidLoad() {
@@ -22,6 +26,13 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         
         ref = FIRDatabase.database().reference()
         user = FIRAuth.auth()?.currentUser
+        
+        
+        self.photo.layer.cornerRadius = self.photo.frame.width/2
+        self.photo.layer.borderColor = UIColor.darkGrayColor().CGColor
+        self.photo.layer.borderWidth = 1
+        self.photo.layer.masksToBounds = true
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -33,7 +44,6 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet var photo: UIImageView!
     @IBAction func takePhoto(sender: AnyObject) {
         // 1
         view.endEditing(true)
@@ -82,20 +92,58 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
             return
         }
         
-        let uploadImage : UIImage = photo.image!
-        let base64String = self.imgToBase64(uploadImage)
-        
-        let userID = FIRAuth.auth()?.currentUser?.uid
+        let Parameters = ["submitted": "1",
+                          "unique_id" : userDetail["unique_id"] as? String ?? "",
+                          "user_id" : userDetail["user_id"] as? String ?? ""]
+        print(Parameters)
         
         CommonUtils.sharedUtils.showProgress(self.view, label: "Uploading image...")
-        
-        ref.child("users").child(userID!).child("image").setValue(base64String) { (error, firebase) in
+        Alamofire.upload(.POST, url_SetProfilePic, multipartFormData: { (multipartFormData) -> Void in
+            if let imageData = UIImageJPEGRepresentation(self.photo.image!, 0.8) {
+                multipartFormData.appendBodyPart(data: imageData, name: "profile_photo", fileName: "file.png", mimeType: "image/png")
+            }
+            for (key, value) in Parameters {
+                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
+            }
+        })
+        { (encodingResult) -> Void in
+            
             CommonUtils.sharedUtils.hideProgress()
-            if error == nil {
-                let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
-                self.navigationController?.pushViewController(mainScreenViewController, animated: true)
-            } else {
-                CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Failed uploading profile image")
+            
+            switch encodingResult {
+            
+            case .Success (let upload, _, _):
+                upload.responseJSON { response in
+                    CommonUtils.sharedUtils.hideProgress()
+                    switch response.result
+                    {
+                    case .Success(let data):
+                        
+                        let json = JSON(data)
+                        print(json.dictionary)
+                        print(json.dictionaryObject)
+                        
+                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                            print(msg)
+                            SVProgressHUD.showSuccessWithStatus(msg)
+                            let signInViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
+                            self.navigationController?.pushViewController(signInViewController, animated: true)
+                        } else {
+                            SVProgressHUD.showErrorWithStatus("Unable to register!")
+                            //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
+                        }
+                        
+                        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
+                        
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
+                    }
+                }
+                //break
+            case .Failure(let errorType):
+                print("\(errorType)")
+                SVProgressHUD.showErrorWithStatus("Failed to save!")
+                print("Unable to save user profile information : \(errorType)")
             }
         }
     }
@@ -126,7 +174,7 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     // Activity Indicator methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            photo.contentMode = .ScaleAspectFit
+            //photo.contentMode = .ScaleAspectFit
             photo.image = self.scaleImage(pickedImage, maxDimension: 300)
         }
         
