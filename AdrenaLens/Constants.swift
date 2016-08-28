@@ -30,18 +30,17 @@ let BaseURL  = "http://adrenalensapp.com/API/"
 //Login Registration API
 let url_Login  = BaseURL + "login.php"
 let url_Register  = BaseURL + "register.php"
-let url_SetProfile  = BaseURL + ""
 let url_SetProfilePic  = BaseURL + "profile.php"
+let url_SetProfile  = BaseURL + ""
 
 //Image API
-let url_AddPhoto  = BaseURL + ""
-let url_ListPhoto  = BaseURL + ""
+let url_PostPhoto  = BaseURL + "upload_photo.php"
+let url_timeline  = BaseURL + "timeline.php"
+let url_myTimeline  = BaseURL + "my_timeline.php"
+
 
 /*
- http://adrenalensapp.com/API/register.php
- 
- Parameter :
- 
+ http:// adrenalensapp.com/API/register.php
  submitted = 1
  name
  email
@@ -49,18 +48,13 @@ let url_ListPhoto  = BaseURL + ""
  password
  
  
- http://adrenalensapp.com/API/login.php
- 
- Parameter :
- 
+ http:// adrenalensapp.com/API/login.php
  submitted = 1
  username
  password
  
  
- http://adrenalensapp.com/API/profile.php
- 
- 
+ http:// adrenalensapp.com/API/profile.php
  submitted = 1
  unique_id
  user_id
@@ -73,6 +67,34 @@ let url_ListPhoto  = BaseURL + ""
  "user_id" = 20;
  "user_name" = ios2;
  }
+ 
+ http:// adrenalensapp.com/API/upload_photo.php
+ submitted = 1
+ user_id
+ unique_id
+ caption
+ user_upload_time
+ photo
+ 
+ http:// adrenalensapp.com/API/timeline.php
+ submitted = 1
+ 
+ {
+ "user_upload_time" : "28\/8\/2016, 18:21:42",
+ "caption" : "Write your caption",
+ "user_photo" : {
+ "user_email" : "parthjdabhi@gmail.com",
+ "user_id" : "2",
+ "unique_id" : "parthjdabhi12",
+ "profile_photo" : "",
+ "user_name" : "Parth"
+ },
+ "photo" : "http:\/\/adrenalensapp.com\/API\/app-users-upload\/parthjdabhi12\/file.1472388820.png"
+ }
+ 
+ http:// adrenalensapp.com/API/my_timeline.php
+ submitted = 1
+ user_id
  
  */
 

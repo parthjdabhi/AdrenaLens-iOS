@@ -9,16 +9,23 @@
 import UIKit
 
 class FindPhotosVC: UIViewController {
-
+    
+    //@IBOutlet weak var txtImages: UITextField!
     @IBOutlet weak var txtSport: UITextField!
     @IBOutlet weak var txtLocation: UITextField!
     @IBOutlet weak var txtDate: UITextField!
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var btnLocation: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtSport.setBorder(nil, color: nil)
+        txtLocation.setBorder(nil, color: nil)
+        txtDate.setBorder(nil, color: nil)
+        btnSearch.setBorder(nil, color: nil)
+        
         // Do any additional setup after loading the view.
     }
 

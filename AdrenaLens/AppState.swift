@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 
+import Alamofire
+import SwiftyJSON
+
 class AppState: NSObject {
     
     static let sharedInstance = AppState()
@@ -20,3 +23,4 @@ class AppState: NSObject {
 }
 
 var userDetail:Dictionary<String,AnyObject> = [:]
+var timeline:Array<JSON> = []

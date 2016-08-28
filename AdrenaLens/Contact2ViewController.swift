@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+
 class Contact2ViewController: UIViewController {
     
     @IBOutlet var emailField: UITextField!

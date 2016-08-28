@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyProfileVC: UIViewController {
 
@@ -42,7 +43,21 @@ class MyProfileVC: UIViewController {
     */
 
     @IBAction func actionSetting(sender: UIButton) {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+            AppState.sharedInstance.signedIn = false
+            dismissViewControllerAnimated(true, completion: nil)
+        } catch let signOutError as NSError {
+            print ("Error signing out: \(signOutError)")
+        }
+        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
+        self.navigationController?.pushViewController(loginViewController, animated: true)
     }
+    
     @IBAction func actionEditProfile(sender: UIButton) {
     }
     @IBAction func actionUploadProfile(sender: UIButton) {

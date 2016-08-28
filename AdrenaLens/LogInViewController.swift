@@ -28,11 +28,11 @@ class FirebaseSignInViewController: UIViewController {
         emailField.leftViewMode = UITextFieldViewMode.Always
         emailField.textColor = UIColor.blackColor()
         passwordField.textColor = UIColor.blackColor()
+        
         let paddingForFirst = UIView(frame: CGRectMake(0, 0, 10, self.passwordField.frame.size.height))
         //Adding the padding to the second textField
         passwordField.leftView = paddingForFirst
         passwordField.leftViewMode = UITextFieldViewMode .Always
-        
         passwordField.font = UIFont(name: passwordField.font!.fontName, size: 20)
     }
     
@@ -118,9 +118,12 @@ class FirebaseSignInViewController: UIViewController {
                             NSUserDefaults.standardUserDefaults().setObject(result, forKey: "userDetail")
                             NSUserDefaults.standardUserDefaults().synchronize()
                             
+                            
                             //Go To Main Screen
-                            let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
-                            self.navigationController?.pushViewController(mainScreenViewController, animated: true)
+                            self.performSegueWithIdentifier("segueMainScreen", sender: nil)
+                            
+//                            let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
+//                            self.navigationController?.pushViewController(mainScreenViewController, animated: true)
                         } else  if let msg = json["msg"].string {
                             SVProgressHUD.showErrorWithStatus(msg)
                         } else {
