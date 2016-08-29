@@ -13,8 +13,6 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 //import Fabric
 //import TwitterKit
-import Firebase
-import OAuthSwift
 import IQKeyboardManagerSwift
 import SVProgressHUD
 
@@ -34,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let mixpanel = Mixpanel.sharedInstanceWithToken("6628944bd071ab90431d14a4cded3cf0")
         mixpanel.track("App launched")
         
-        FIRApp.configure()
+        //FIRApp.configure()
         
         let settings: UIUserNotificationSettings =
             UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
@@ -61,23 +59,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             self.window!.makeKeyAndVisible()
         }
         
+//        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+//        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
+//        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+//        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+//        let view = UIView(frame:CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+//        view.backgroundColor = UIColor.orangeColor()
+//        self.window?.rootViewController?.view.addSubview(view)
+
+//        if  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView {
+//            statusBar.backgroundColor = UIColor.orangeColor()
+//        }
+        
+        UITabBar.appearance().itemPositioning = .Centered
+        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        UITabBar.appearance().tintColor = UIColor(red: 252/255.0, green: 162/255.0, blue: 0.01/255.0, alpha: 1.0)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState:.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blackColor()], forState:.Selected)
+        
         return true
     }
     
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         print(deviceToken)
-        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Sandbox)
-    }
-    
-    func connectToFcm() {
-        FIRMessaging.messaging().connectWithCompletion { (error) in
-            if (error != nil) {
-                print("Unable to connect with FCM. \(error)")
-            } else {
-                print("Connected to FCM.")
-            }
-        }
+//        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Sandbox)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject])
@@ -87,12 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     
     func applicationHandleOpenURL(url: NSURL) {
-        if (url.host == "oauth-callback") {
-            OAuthSwift.handleOpenURL(url)
-        } else {
-            // Google provider is the only one wuth your.bundle.id url schema.
-            OAuthSwift.handleOpenURL(url)
-        }
+//        if (url.host == "oauth-callback") {
+//            OAuthSwift.handleOpenURL(url)
+//        } else {
+//            // Google provider is the only one wuth your.bundle.id url schema.
+//            OAuthSwift.handleOpenURL(url)
+//        }
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool
@@ -117,7 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
-        FIRMessaging.messaging().disconnect()
         print("Disconnected from FCM.")
     }
     
@@ -134,11 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let loginManager: FBSDKLoginManager = FBSDKLoginManager()
         loginManager.logOut()
         
-        let credential = FIRFacebookAuthProvider.credentialWithAccessToken(FBSDKAccessToken.currentAccessToken().tokenString)
-        
-        FIRAuth.auth()?.signInWithCredential(credential) { (user, error) in
-            // ...
-        }
+        //FBSDKAccessToken.currentAccessToken().tokenStringFBSDKAccessToken.currentAccessToken().tokenString
         
         self.saveContext()
     }

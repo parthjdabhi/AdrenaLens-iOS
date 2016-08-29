@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import Firebase
-
+import CoreLocation
 import Alamofire
 import SwiftyJSON
 
@@ -18,9 +17,13 @@ class AppState: NSObject {
     
     var signedIn = false
     var displayName: String?
-    var photoUrl: NSURL?    
-    var currentUser: FIRDataSnapshot!
+    var photoUrl: NSURL?
 }
+
+//Global Data
+var CLocation:CLLocation = CLLocation()
+var CLocationPlace:String = String()
 
 var userDetail:Dictionary<String,AnyObject> = [:]
 var timeline:Array<JSON> = []
+var myTimeline:Array<JSON> = []

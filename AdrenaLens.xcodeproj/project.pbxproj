@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0AC1BE1D740D420084E121 /* PostPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC1BD1D740D420084E121 /* PostPhotoVC.swift */; };
+		5E473C2A1D743EF200EFBE1B /* conthrax-sb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E341EEB1D6ED37A00339C8E /* conthrax-sb.ttf */; };
+		5E473C2C1D74435B00EFBE1B /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E473C2B1D74435B00EFBE1B /* SelectLocationViewController.swift */; };
+		5E473C331D746EF500EFBE1B /* MyPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E473C311D746EF500EFBE1B /* MyPhotoCollectionViewCell.swift */; };
+		5E473C341D746EF500EFBE1B /* MyPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E473C321D746EF500EFBE1B /* MyPhotoCollectionViewCell.xib */; };
+		5E473C361D7476F600EFBE1B /* Test1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E473C351D7476F600EFBE1B /* Test1CollectionViewCell.swift */; };
 		5EC062371D6C4F110063AA5E /* FeaturedPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */; };
 		5EC062391D6C4F260063AA5E /* FindPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */; };
 		5EC0623B1D6C4F370063AA5E /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */; };
@@ -118,7 +124,12 @@
 /* Begin PBXFileReference section */
 		16A064334D550E6C6CFDE3D7 /* Pods-AdrenaLens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.release.xcconfig"; sourceTree = "<group>"; };
 		3FDB22CA573176BAC43A7C6F /* Pods-AdrenaLens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdrenaLens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdrenaLens/Pods-AdrenaLens.debug.xcconfig"; sourceTree = "<group>"; };
+		5E0AC1BD1D740D420084E121 /* PostPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPhotoVC.swift; sourceTree = "<group>"; };
 		5E341EEB1D6ED37A00339C8E /* conthrax-sb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "conthrax-sb.ttf"; sourceTree = "<group>"; };
+		5E473C2B1D74435B00EFBE1B /* SelectLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
+		5E473C311D746EF500EFBE1B /* MyPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E473C321D746EF500EFBE1B /* MyPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		5E473C351D7476F600EFBE1B /* Test1CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test1CollectionViewCell.swift; sourceTree = "<group>"; };
 		5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPhotosVC.swift; sourceTree = "<group>"; };
 		5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPhotosVC.swift; sourceTree = "<group>"; };
 		5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
@@ -256,6 +267,8 @@
 			children = (
 				5EC062461D6C5E860063AA5E /* Tab Screens */,
 				5EC0623C1D6C4F880063AA5E /* SearchResultVC.swift */,
+				5EC062401D6C4FC50063AA5E /* UploadPhotoVC.swift */,
+				5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */,
 				5EC062421D6C4FD50063AA5E /* UploadProfileVC.swift */,
 			);
 			name = "New Screen";
@@ -268,9 +281,11 @@
 				5EC062471D6C75AC0063AA5E /* PhotoTableViewCell.swift */,
 				5EC062361D6C4F110063AA5E /* FeaturedPhotosVC.swift */,
 				5EC062381D6C4F260063AA5E /* FindPhotosVC.swift */,
-				5EC062401D6C4FC50063AA5E /* UploadPhotoVC.swift */,
-				5EC0623A1D6C4F370063AA5E /* PhotoDetailVC.swift */,
 				5EC0623E1D6C4FA20063AA5E /* MyProfileVC.swift */,
+				5E473C351D7476F600EFBE1B /* Test1CollectionViewCell.swift */,
+				5E473C311D746EF500EFBE1B /* MyPhotoCollectionViewCell.swift */,
+				5E473C321D746EF500EFBE1B /* MyPhotoCollectionViewCell.xib */,
+				5E0AC1BD1D740D420084E121 /* PostPhotoVC.swift */,
 			);
 			name = "Tab Screens";
 			sourceTree = "<group>";
@@ -343,6 +358,7 @@
 		DA0228BB1D33497500AA5A99 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E473C2B1D74435B00EFBE1B /* SelectLocationViewController.swift */,
 				DA0228BC1D3349A000AA5A99 /* Helper.swift */,
 				DA0228BD1D3349A000AA5A99 /* CommonUtils.swift */,
 				DA0228BE1D3349A000AA5A99 /* RotateImage.swift */,
@@ -597,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E473C2A1D743EF200EFBE1B /* conthrax-sb.ttf in Resources */,
 				DA8B4A771D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0011_Contact-AdrenaLens.png in Resources */,
 				DA8B4A6E1D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0002_Layer-3.png in Resources */,
 				DA8B4B791D5523D000F56470 /* Name.png in Resources */,
@@ -636,6 +653,7 @@
 				DA8B4A591D52F23500F56470 /* LaunchScreen.png in Resources */,
 				DA02288E1D3342B900AA5A99 /* Main.storyboard in Resources */,
 				DA8B4B781D5523D000F56470 /* ConfirmPassword.png in Resources */,
+				5E473C341D746EF500EFBE1B /* MyPhotoCollectionViewCell.xib in Resources */,
 				DA8B4AA51D53967900F56470 /* UserName.png in Resources */,
 				DA8B4A781D52F5C200F56470 /* Welcome-Screen(LOGIN-and-Register)_0012_Register.png in Resources */,
 				DA8B4B6E1D5514B200F56470 /* Send.png in Resources */,
@@ -726,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E473C2C1D74435B00EFBE1B /* SelectLocationViewController.swift in Sources */,
 				5EC0623B1D6C4F370063AA5E /* PhotoDetailVC.swift in Sources */,
 				DA8B4B721D5521BE00F56470 /* Contact2ViewController.swift in Sources */,
 				DA0228C51D3349A000AA5A99 /* RotateImage.swift in Sources */,
@@ -739,8 +758,10 @@
 				DA0228D51D334AF000AA5A99 /* MainScreenViewController.swift in Sources */,
 				5EC062371D6C4F110063AA5E /* FeaturedPhotosVC.swift in Sources */,
 				DA0228C71D3349A000AA5A99 /* Extensions.swift in Sources */,
+				5E0AC1BE1D740D420084E121 /* PostPhotoVC.swift in Sources */,
 				DA0228C91D3349A000AA5A99 /* AEXML.swift in Sources */,
 				5EC062481D6C75AC0063AA5E /* PhotoTableViewCell.swift in Sources */,
+				5E473C361D7476F600EFBE1B /* Test1CollectionViewCell.swift in Sources */,
 				DA0228D81D334AF000AA5A99 /* LogInViewController.swift in Sources */,
 				5EC062391D6C4F260063AA5E /* FindPhotosVC.swift in Sources */,
 				DA02288B1D3342B900AA5A99 /* ViewController.swift in Sources */,
@@ -753,6 +774,7 @@
 				DA0228C31D3349A000AA5A99 /* Helper.swift in Sources */,
 				5EC062411D6C4FC50063AA5E /* UploadPhotoVC.swift in Sources */,
 				DA8B4A801D52FB6100F56470 /* IntroViewController.swift in Sources */,
+				5E473C331D746EF500EFBE1B /* MyPhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

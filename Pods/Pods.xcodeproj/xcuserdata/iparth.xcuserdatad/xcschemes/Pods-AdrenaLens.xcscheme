@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B67024613077E6EFADC4BBA4ADB76C06"
+               BlueprintIdentifier = "8D73878D20E179CD9825776AA9CFF4E6"
                BuildableName = "Pods_AdrenaLens.framework"
                BlueprintName = "Pods-AdrenaLens"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B67024613077E6EFADC4BBA4ADB76C06"
+            BlueprintIdentifier = "8D73878D20E179CD9825776AA9CFF4E6"
             BuildableName = "Pods_AdrenaLens.framework"
             BlueprintName = "Pods-AdrenaLens"
             ReferencedContainer = "container:Pods.xcodeproj">

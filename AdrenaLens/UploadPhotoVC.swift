@@ -17,6 +17,7 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var btnPost: UIButton!
     
+    
     var imgTaken = false
     var imgToPost:UIImage?
     
@@ -24,9 +25,9 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        imgPost.setBorder(nil, color: nil)
-        tvCaption.setBorder(nil, color: nil)
-        btnPost.setBorder(nil, color: nil)
+        imgPost.setBorder()
+        tvCaption.setBorder()
+        btnPost.setBorder()
     }
 
     override func didReceiveMemoryWarning() {

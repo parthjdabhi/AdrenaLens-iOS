@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 import Alamofire
 import SwiftyJSON
@@ -19,7 +18,6 @@ class FirebaseSignInViewController: UIViewController {
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var facebook: UIButton!
-    var ref:FIRDatabaseReference!
     
     override func viewDidLoad() {
         
@@ -34,13 +32,6 @@ class FirebaseSignInViewController: UIViewController {
         passwordField.leftView = paddingForFirst
         passwordField.leftViewMode = UITextFieldViewMode .Always
         passwordField.font = UIFont(name: passwordField.font!.fontName, size: 20)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        if let user = FIRAuth.auth()?.currentUser {
-            self.signedIn(user)
-        }
-        ref = FIRDatabase.database().reference()
     }
     
     override func  preferredStatusBarStyle()-> UIStatusBarStyle {
@@ -144,18 +135,6 @@ class FirebaseSignInViewController: UIViewController {
         }
     }
     
-    func setDisplayName(user: FIRUser) {
-        let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = user.email!.componentsSeparatedByString("@")[0]
-        changeRequest.commitChangesWithCompletion(){ (error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.signedIn(FIRAuth.auth()?.currentUser)
-        }
-    }
-    
     /*
     @IBAction func didRequestPasswordReset(sender: AnyObject) {
         let prompt = UIAlertController.init(title: nil, message: "Email:", preferredStyle: UIAlertControllerStyle.Alert)
@@ -227,10 +206,5 @@ class FirebaseSignInViewController: UIViewController {
         }
         
     }*/
-    
-    func signedIn(user: FIRUser?) {
-        let mainScreenViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MainScreenViewController") as! MainScreenViewController!
-        self.navigationController?.pushViewController(mainScreenViewController, animated: true)
-    }
     
 }

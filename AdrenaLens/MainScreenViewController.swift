@@ -7,15 +7,13 @@
 //
 
 import UIKit
-import Firebase
 import SDWebImage
 
 class MainScreenViewController: UIViewController {
 
     @IBOutlet var profilePicture: UIImageView!
     @IBOutlet var profileInfo: UILabel!
-    var ref:FIRDatabaseReference!
-    var user: FIRUser!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +35,6 @@ class MainScreenViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-            AppState.sharedInstance.signedIn = false
-            dismissViewControllerAnimated(true, completion: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: \(signOutError)")
-        }
         let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-import FBSDKShareKit
-import Firebase
+//import FBSDKLoginKit
+//import FBSDKShareKit
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
@@ -22,7 +21,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
-    var ref:FIRDatabaseReference!
     
     override func viewDidLoad() {
         
@@ -49,10 +47,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailField.font = UIFont(name: emailField.font!.fontName, size: 20)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        ref = FIRDatabase.database().reference()
-        
-    }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

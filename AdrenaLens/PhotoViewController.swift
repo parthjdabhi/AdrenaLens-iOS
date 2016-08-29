@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseStorage
 import Alamofire
 import SwiftyJSON
 import SVProgressHUD
@@ -17,16 +15,10 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     
     @IBOutlet var photo: UIImageView!
     
-    var ref:FIRDatabaseReference!
-    var user: FIRUser!
     var imgTaken = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ref = FIRDatabase.database().reference()
-        user = FIRAuth.auth()?.currentUser
-        
         
         self.photo.layer.cornerRadius = self.photo.frame.width/2
         self.photo.layer.borderColor = UIColor.darkGrayColor().CGColor

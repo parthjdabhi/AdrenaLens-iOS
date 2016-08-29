@@ -113,14 +113,12 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.imgPhoto.sd_setImageWithURL(NSURL(string: timeline[indexPath.row]["photo"].string ?? ""))
         
-        // set the text from the data model
-        //cell.textLabel?.text = "Sample text"
-        
         return cell
     }
     
     // method to run when table view cell is tapped
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        print("You tapped cell at index \(indexPath.row).")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

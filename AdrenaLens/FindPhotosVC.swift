@@ -17,14 +17,13 @@ class FindPhotosVC: UIViewController {
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var btnLocation: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        txtSport.setBorder(nil, color: nil)
-        txtLocation.setBorder(nil, color: nil)
-        txtDate.setBorder(nil, color: nil)
-        btnSearch.setBorder(nil, color: nil)
+        txtSport.setBorder()
+        txtLocation.setBorder()
+        txtDate.setBorder()
+        //btnSearch.setBorder()
         
         // Do any additional setup after loading the view.
     }

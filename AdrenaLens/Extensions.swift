@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import QuartzCore
 
 extension UIApplication {
     class func tryURL(urls: [String]) {
@@ -23,13 +23,13 @@ extension UIApplication {
 }
 
 extension UIView {
-    public func setBorder(width: CGFloat?, color: UIColor?)
+    public func setBorder(width:CGFloat = 1, color: UIColor = UIColor.darkGrayColor())
     {
-        self.layer.borderColor = color?.CGColor ?? UIColor.darkGrayColor().CGColor
-        self.layer.borderWidth = width ?? 1.0
+        self.layer.borderColor = color.CGColor
+        self.layer.borderWidth = width
         self.layer.masksToBounds = true
     }
-    public func setCornerRadious(radious: CGFloat?)
+    public func setCornerRadious(radious:CGFloat = 4)
     {
         self.layer.cornerRadius = radious ?? 4
         self.layer.masksToBounds = true
@@ -37,18 +37,42 @@ extension UIView {
 }
 
 extension UITextField {
-    public func setLeftMargin(marginWidth: CGFloat?)
+    public func setLeftMargin(marginWidth:CGFloat = 4)
     {
-        let paddingLeft = UIView(frame: CGRectMake(0, 0, marginWidth ?? 8, self.frame.size.height))
+        let paddingLeft = UIView(frame: CGRectMake(0, 0, marginWidth, self.frame.size.height))
         self.leftView = paddingLeft
         self.leftViewMode = UITextFieldViewMode .Always
     }
-    public func setRightMargin(marginWidth: CGFloat?)
+    public func setRightMargin(marginWidth:CGFloat = 4)
     {
-        let paddingRight = UIView(frame: CGRectMake(0, 0, marginWidth ?? 8, self.frame.size.height))
+        let paddingRight = UIView(frame: CGRectMake(0, 0, marginWidth, self.frame.size.height))
         self.rightView = paddingRight
         self.rightViewMode = UITextFieldViewMode .Always
     }
+}
+
+extension UIButton {
+    
+    func alignImageAndTitleVertically(padding: CGFloat = 6.0) {
+        let imageSize = self.imageView!.frame.size
+        let titleSize = self.titleLabel!.frame.size
+        let totalHeight = imageSize.height + titleSize.height + padding
+        
+        self.imageEdgeInsets = UIEdgeInsets(
+            top: -(totalHeight - imageSize.height),
+            left: 0,
+            bottom: 0,
+            right: -titleSize.width
+        )
+        
+        self.titleEdgeInsets = UIEdgeInsets(
+            top: 0,
+            left: -imageSize.width,
+            bottom: -(totalHeight - titleSize.height),
+            right: 0
+        )
+    }
+    
 }
 
 extension NSDateFormatter {
@@ -112,5 +136,62 @@ extension NSDate {
         }
         
         return "a moment ago"
+    }
+}
+
+extension NSDate {
+    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isGreater = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
+            isGreater = true
+        }
+        
+        //Return Result
+        return isGreater
+    }
+    
+    func isLessThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isLess = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedAscending {
+            isLess = true
+        }
+        
+        //Return Result
+        return isLess
+    }
+    
+    func equalToDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isEqualTo = false
+        
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedSame {
+            isEqualTo = true
+        }
+        
+        //Return Result
+        return isEqualTo
+    }
+    
+    func addDays(daysToAdd: Int) -> NSDate {
+        let secondsInDays: NSTimeInterval = Double(daysToAdd) * 60 * 60 * 24
+        let dateWithDaysAdded: NSDate = self.dateByAddingTimeInterval(secondsInDays)
+        
+        //Return Result
+        return dateWithDaysAdded
+    }
+    
+    func addHours(hoursToAdd: Int) -> NSDate {
+        let secondsInHours: NSTimeInterval = Double(hoursToAdd) * 60 * 60
+        let dateWithHoursAdded: NSDate = self.dateByAddingTimeInterval(secondsInHours)
+        
+        //Return Result
+        return dateWithHoursAdded
     }
 }

@@ -7,7 +7,10 @@
 //
 
 import UIKit
-import Firebase
+import Alamofire
+import SwiftyJSON
+import SVProgressHUD
+import SDWebImage
 
 class MyProfileVC: UIViewController {
 
@@ -22,10 +25,28 @@ class MyProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+//        self.cvMyPhotos.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        //self.cvMyPhotos.registerClass(MyPhotoCollectionViewCell.self, forCellWithReuseIdentifier: MyPhotoCollectionViewCell.identifier)
+//        let nibName = UINib(nibName: MyPhotoCollectionViewCell.identifier, bundle:nil)
+//        cvMyPhotos.registerNib(nibName, forCellWithReuseIdentifier: MyPhotoCollectionViewCell.identifier)
+        
+        self.cvMyPhotos?.registerNib(UINib(nibName: MyPhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MyPhotoCollectionViewCell.identifier)
+        
+        imgProfile.layoutSubviews()
+        imgProfile.setCornerRadious(imgProfile.frame.size.width/2)
+        imgProfile.setBorder(0.5, color: UIColor.blackColor())
+        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""))
+        
+        lblName.text = userDetail["user_name"] as? String
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        getMyTimeline()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,14 +67,6 @@ class MyProfileVC: UIViewController {
         NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-            AppState.sharedInstance.signedIn = false
-            dismissViewControllerAnimated(true, completion: nil)
-        } catch let signOutError as NSError {
-            print ("Error signing out: \(signOutError)")
-        }
         let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }
@@ -68,12 +81,67 @@ class MyProfileVC: UIViewController {
         return 1
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return myTimeline.count
     }
-    //    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    //        <#code#>
-    //    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+//        let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
+//        
+//        cell.backgroundView?.backgroundColor = UIColor.redColor()
+//        return cell
+        let cell:MyPhotoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(MyPhotoCollectionViewCell.identifier, forIndexPath: indexPath) as! MyPhotoCollectionViewCell
+        let url = NSURL(string: myTimeline[indexPath.row]["photo"].string ?? "")
+        cell.img.sd_setImageWithURL(url)
+        return cell
+    }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //Selected cell item
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
+    
+    func getMyTimeline()
+    {
+        if let unique_id = userDetail["unique_id"] as? String , user_id = userDetail["user_id"] as? String
+        {
+            CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
+            
+            let Parameters = ["submitted" : "1",
+                              "unique_id" : unique_id,
+                              "user_id" : user_id]
+            
+            Alamofire.request(.POST, url_myTimeline, parameters: Parameters)
+                .validate()
+                .responseJSON { response in
+                    CommonUtils.sharedUtils.hideProgress()
+                    switch response.result
+                    {
+                    case .Success(let data):
+                        let json = JSON(data)
+                        print(json.dictionary)
+                        
+                        if let status = json["status"].string,
+                            result = json["result"].array where status == "1"
+                        {
+                            print(result)
+                            myTimeline = result
+                            self.cvMyPhotos.reloadData()
+                            
+                            //NSUserDefaults.standardUserDefaults().setObject(result, forKey: "myTimeline")
+                            //NSUserDefaults.standardUserDefaults().synchronize()
+                            
+                        } else  if let msg = json["msg"].string {
+                            SVProgressHUD.showErrorWithStatus(msg)
+                        } else {
+                            SVProgressHUD.showErrorWithStatus("Unable to get your timeline!")
+                        }
+                        
+                        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
+                        
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
+                        //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
+                    }
+            }
+        }
     }
 }
