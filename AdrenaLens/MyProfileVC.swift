@@ -23,6 +23,8 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var lblBio: UILabel!
     @IBOutlet weak var cvMyPhotos: UICollectionView!
     
+    var col3ViewLayout: Col3FlowLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,6 +35,11 @@ class MyProfileVC: UIViewController {
 //        cvMyPhotos.registerNib(nibName, forCellWithReuseIdentifier: MyPhotoCollectionViewCell.identifier)
         
         self.cvMyPhotos?.registerNib(UINib(nibName: MyPhotoCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MyPhotoCollectionViewCell.identifier)
+        
+        
+        col3ViewLayout = Col3FlowLayout()
+        cvMyPhotos.collectionViewLayout = col3ViewLayout
+        cvMyPhotos.backgroundColor = .whiteColor()
         
         imgProfile.layoutSubviews()
         imgProfile.setCornerRadious(imgProfile.frame.size.width/2)
@@ -63,16 +70,27 @@ class MyProfileVC: UIViewController {
     }
     */
 
-    @IBAction func actionSetting(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
-        NSUserDefaults.standardUserDefaults().synchronize()
+    @IBAction func actionSetting(sender: UIButton)
+    {
+        let actionSheetController = UIAlertController (title: "Message", message: "Are you sure want to logout?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        actionSheetController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        actionSheetController.addAction(UIAlertAction(title: "Logout", style: UIAlertActionStyle.Destructive, handler: { (actionSheetController) -> Void in
+            print("handle Logout action...")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
+            self.navigationController?.pushViewController(loginViewController, animated: true)
+        }))
         
-        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
-        self.navigationController?.pushViewController(loginViewController, animated: true)
+        presentViewController(actionSheetController, animated: true, completion: nil)
     }
     
     @IBAction func actionEditProfile(sender: UIButton) {
+        let editProfileVC = self.storyboard?.instantiateViewControllerWithIdentifier("UpdateProfileVC") as! UpdateProfileVC
+        self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
+    
     @IBAction func actionUploadProfile(sender: UIButton) {
     }
     
@@ -86,7 +104,6 @@ class MyProfileVC: UIViewController {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
 //        let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell
-//        
 //        cell.backgroundView?.backgroundColor = UIColor.redColor()
 //        return cell
         let cell:MyPhotoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(MyPhotoCollectionViewCell.identifier, forIndexPath: indexPath) as! MyPhotoCollectionViewCell

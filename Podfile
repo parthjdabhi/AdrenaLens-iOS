@@ -19,5 +19,6 @@ target 'AdrenaLens' do
     ## pod 'AlamofireSwiftyJSON', '~> 0.1'
     pod 'SwiftyJSON', '~> 2.3'
     pod 'SVProgressHUD', '~> 1.1'
+    pod 'Agrume', '~> 2.7'
     
 end

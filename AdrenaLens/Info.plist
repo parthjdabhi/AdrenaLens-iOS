@@ -2,11 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>conthrax-sb.ttf</string>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -27,53 +31,53 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb1104004012978479</string>
-            </array>
-        </dict>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>oauth-swift</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>1104004012978479</string>
-    <key>FacebookDisplayName</key>
-    <string>AdrenaLens</string>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>09950107d7958fda64c46553fb70f08f310d0875</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict>
-                    <key>consumerKey</key>
-                    <string>HtIEpWIHhGlKwWo81HCfJ0Oom</string>
-                    <key>consumerSecret</key>
-                    <string>jAgiS88FiP9fugsBVtm2SjZamcQGm9U9GbF8JqT4PdvszZnO4O</string>
-                </dict>
-                <key>KitName</key>
-                <string>Twitter</string>
-            </dict>
-        </array>
-    </dict>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1104004012978479</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>oauth-swift</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>1104004012978479</string>
+	<key>FacebookDisplayName</key>
+	<string>AdrenaLens</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>09950107d7958fda64c46553fb70f08f310d0875</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>HtIEpWIHhGlKwWo81HCfJ0Oom</string>
+					<key>consumerSecret</key>
+					<string>jAgiS88FiP9fugsBVtm2SjZamcQGm9U9GbF8JqT4PdvszZnO4O</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -88,9 +92,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>We need to know your location to identify where you are located</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We need to know your location to identify where you are located</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need to know your location to identify where you are located</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to know your location to identify where you are located</string>
 </dict>
 </plist>

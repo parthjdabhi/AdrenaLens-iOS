@@ -12,11 +12,12 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 import SDWebImage
+import Agrume
 
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var txtSearch: UITextField!
-    @IBOutlet weak var btnSetting: NSLayoutConstraint!
+    @IBOutlet weak var btnSetting: UIButton!
     @IBOutlet weak var tblPhotos: UITableView!
     
     
@@ -99,6 +100,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // number of rows in table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return timeline.count
+        //can show emplty lable when no post
     }
     
     // create a cell for each table view row
@@ -107,9 +109,9 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         // create a new cell if needed or reuse an old one
         let cell:PhotoTableViewCell = self.tblPhotos.dequeueReusableCellWithIdentifier(PhotoTableViewCell.identifier) as! PhotoTableViewCell!
         
-        cell.lblCaption.text = timeline[indexPath.row]["user_photo"].dictionaryObject?["user_name"] as? String ?? ""
-        cell.lblDetail.text = timeline[indexPath.row]["caption"].string ?? ""
-        cell.lblDateTime.text = timeline[indexPath.row]["user_upload_time"].string ?? ""
+        cell.lblCaption.text = timeline[indexPath.row]["user_photo"].dictionaryObject?["name"] as? String ?? ""
+        cell.lblDetail.text = timeline[indexPath.row]["sport"].string ?? ""
+        cell.lblDateTime.text = timeline[indexPath.row]["user_upload_time"].string?.asDateUTC?.getElapsedInterval() ?? ""
         
         cell.imgPhoto.sd_setImageWithURL(NSURL(string: timeline[indexPath.row]["photo"].string ?? ""))
         
@@ -119,6 +121,15 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // method to run when table view cell is tapped
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You tapped cell at index \(indexPath.row).")
+        //let cell = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //let arg = Agrume(imageURL: NSURL(string: timeline[indexPath.row]["photo"].string ?? "")!,backgroundBlurStyle: .Light)
+        //arg.showFrom(self)
+        
+        selectedPhoto = timeline[indexPath.row]
+        let viewPhotoVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewPhotoVC") as! ViewPhotoVC
+        self.navigationController?.pushViewController(viewPhotoVC, animated: true)
+        
     }
 }

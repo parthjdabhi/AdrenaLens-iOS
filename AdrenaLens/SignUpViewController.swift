@@ -81,7 +81,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 "password" : password]
             print(Parameters)
             
-            Alamofire.request(.POST, url_Register, parameters: Parameters)
+            Alamofire.request(.POST, url_register, parameters: Parameters)
                 .validate()
                 .responseJSON { response in
                     CommonUtils.sharedUtils.hideProgress()

@@ -11,12 +11,12 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class UpdateProfileVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var tvCaption: UITextView!
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var btnPost: UIButton!
-    
+    @IBOutlet weak var lblSelectImage: UILabel!
     
     var imgTaken = false
     var imgToPost:UIImage?
@@ -24,10 +24,11 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        lblSelectImage.setCornerRadious()
+        imgPost.setCornerRadious()
         imgPost.setBorder()
         tvCaption.setBorder()
-        btnPost.setBorder()
+        tvCaption.setCornerRadious()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +46,18 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func actionBack(sender: UIButton) {
+        //Go To back
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     @IBAction func actionSelectPhoto(sender: UIButton) {
         self.selectPhoto()
     }
-    @IBAction func actionPostPhoto(sender: UIButton) {
-        self.postPicture()
+    
+    @IBAction func actionUpdateProfilePicture(sender: UIButton) {
+        self.UpdateProfilePicture()
     }
     
     // Image Picker methods
@@ -106,7 +113,8 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
     }
     
     
-    func postPicture() {
+    func UpdateProfilePicture()
+    {
         if imgToPost == nil {
             CommonUtils.sharedUtils.showAlert(self, title: "Alert!", message: "Please select the photo")
             return
@@ -115,15 +123,15 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
         let Parameters = ["submitted": "1",
                           "unique_id" : userDetail["unique_id"] as? String ?? "",
                           "user_id" : userDetail["user_id"] as? String ?? "",
-                          "caption" : tvCaption.text ?? "",
-                          "user_upload_time" : NSDate().customFormatted]
+                          "bio_graphy" : tvCaption.text ?? "",
+                          "upload_time" : NSDate().strDateInUTC]
         
         print(Parameters)
         
-        CommonUtils.sharedUtils.showProgress(self.view, label: "Uploading image...")
-        Alamofire.upload(.POST, url_PostPhoto, multipartFormData: { (multipartFormData) -> Void in
+        CommonUtils.sharedUtils.showProgress(self.view, label: "Updating..")
+        Alamofire.upload(.POST, url_setProfilePic, multipartFormData: { (multipartFormData) -> Void in
             if let imageData = UIImageJPEGRepresentation(self.imgToPost!, 0.8) {
-                multipartFormData.appendBodyPart(data: imageData, name: "photo", fileName: "file.png", mimeType: "image/png")
+                multipartFormData.appendBodyPart(data: imageData, name: "profile_photo", fileName: "file.png", mimeType: "image/png")
             }
             for (key, value) in Parameters {
                 multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
@@ -131,7 +139,7 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
             })
         { (encodingResult) -> Void in
             
-            CommonUtils.sharedUtils.hideProgress()
+            //CommonUtils.sharedUtils.hideProgress()
             
             switch encodingResult {
                 
@@ -149,10 +157,9 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
                         if let status = json["status"].string, msg = json["msg"].string where status == "1" {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)
-                            self.imgToPost = nil
-                            self.imgTaken = false
+                            self.navigationController?.popViewControllerAnimated(true)
                         } else {
-                            SVProgressHUD.showErrorWithStatus("Unable to post photo!")
+                            SVProgressHUD.showErrorWithStatus("Unable to update details!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
                         }
                         
@@ -165,6 +172,7 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePi
             //break
             case .Failure(let errorType):
                 print("\(errorType)")
+                CommonUtils.sharedUtils.hideProgress()
                 SVProgressHUD.showErrorWithStatus("Failed to save!")
                 print("Unable to save user profile information : \(errorType)")
             }

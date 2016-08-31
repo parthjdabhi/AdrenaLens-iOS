@@ -1,4 +1,5 @@
 PODS:
+  - Agrume (2.7.0)
   - Alamofire (3.4.1)
   - AlamofireNetworkActivityIndicator (1.0.1):
     - Alamofire (~> 3.3)
@@ -26,6 +27,7 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - Agrume (~> 2.7)
   - Alamofire (~> 3.4)
   - AlamofireNetworkActivityIndicator (~> 1.0)
   - FBSDKCoreKit
@@ -39,6 +41,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 2.3)
 
 SPEC CHECKSUMS:
+  Agrume: d61d044cd26db13ccad57da0366fbf14b8a0f242
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireNetworkActivityIndicator: 49a6e39afb947136f7b1872bae2d684957c26697
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -52,6 +55,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 332b474b48d8571e80e8a0f837edf6a5ac79866d
+PODFILE CHECKSUM: d92103b46882a0ba508695fd28dad34a52143304
 
 COCOAPODS: 1.0.1

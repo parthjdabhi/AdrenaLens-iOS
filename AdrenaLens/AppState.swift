@@ -27,3 +27,5 @@ var CLocationPlace:String = String()
 var userDetail:Dictionary<String,AnyObject> = [:]
 var timeline:Array<JSON> = []
 var myTimeline:Array<JSON> = []
+var searchTimeline:Array<JSON> = []
+var selectedPhoto:JSON = []

@@ -90,7 +90,7 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         print(Parameters)
         
         CommonUtils.sharedUtils.showProgress(self.view, label: "Uploading image...")
-        Alamofire.upload(.POST, url_SetProfilePic, multipartFormData: { (multipartFormData) -> Void in
+        Alamofire.upload(.POST, url_setProfilePic, multipartFormData: { (multipartFormData) -> Void in
             if let imageData = UIImageJPEGRepresentation(self.photo.image!, 0.8) {
                 multipartFormData.appendBodyPart(data: imageData, name: "profile_photo", fileName: "file.png", mimeType: "image/png")
             }

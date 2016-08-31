@@ -34,6 +34,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         //FIRApp.configure()
         
+        let tdate = NSDate()
+        print(tdate)
+        
+        let strDateUTC = tdate.strDateInUTC
+        print("-- strDateInUTC ",strDateUTC)
+        print("\n-- asDateUTC ",strDateUTC.asDateUTC)
+        print("a-- sDateUTC strDateInLocal ",strDateUTC.asDateUTC?.strDateInLocal)
+        
+        //print("\nasDateLocal ",strDateUTC.asDateLocal)
+        //print("asDateLocal strDateInLocal ",strDateUTC.asDateLocal?.strDateInLocal)
+        //let strDateLocal = tdate.strDateInLocal
+        //print("\n strDateInLocal ",strDateLocal)
+        //print("asDateUTC ",strDateLocal.asDateUTC)
+        //print("asDateLocal ",strDateLocal.asDateLocal)
+        
+        
+        /*
+         2016-08-31 04:42:01 +0000
+         Printing description of tdate:
+         2016-08-31 04:42:01 +0000
+         2016-8-31, 04:42:01
+         Optional(2016-08-31 04:42:01 +0000)
+         */
         let settings: UIUserNotificationSettings =
             UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)

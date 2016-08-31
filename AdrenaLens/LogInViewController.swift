@@ -93,7 +93,7 @@ class FirebaseSignInViewController: UIViewController {
                 "username" : email,
                 "password" : password]
             
-            Alamofire.request(.POST, url_Login, parameters: Parameters)
+            Alamofire.request(.POST, url_login, parameters: Parameters)
                 .validate()
                 .responseJSON { response in
                     CommonUtils.sharedUtils.hideProgress()

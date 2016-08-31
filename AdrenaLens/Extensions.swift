@@ -82,18 +82,31 @@ extension NSDateFormatter {
     }
 }
 
+
 extension NSDate {
     struct Formatter {
-        static let custom = NSDateFormatter(dateFormat: "dd/M/yyyy, H:mm:ss")
+        //user_upload_time : Format (YYYY-MM-DD HH:MM:SS) 2016-08-02 11:22:11 (24 hours)
+        static let custom = NSDateFormatter(dateFormat: "yyyy-MM-dd, HH:mm:ss")
+        static let customUTC = NSDateFormatter(dateFormat: "yyyy-MM-dd, HH:mm:ss")
     }
-    var customFormatted: String {
+    var strDateInLocal: String {
+        //formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)  // you can set GMT time
+        //formatter.timeZone = NSTimeZone.localTimeZone()        // or as local time
         return Formatter.custom.stringFromDate(self)
+    }
+    var strDateInUTC: String {
+        Formatter.customUTC.timeZone = NSTimeZone(name: "UTC")
+        return Formatter.customUTC.stringFromDate(self)
     }
 }
 
 extension String {
-    var asDate: NSDate? {
+    var asDateLocal: NSDate? {
         return NSDate.Formatter.custom.dateFromString(self)
+    }
+    var asDateUTC: NSDate? {
+        NSDate.Formatter.customUTC.timeZone = NSTimeZone(name: "UTC")
+        return NSDate.Formatter.customUTC.dateFromString(self)
     }
     func asDateFormatted(with dateFormat: String) -> NSDate? {
         return NSDateFormatter(dateFormat: dateFormat).dateFromString(self)

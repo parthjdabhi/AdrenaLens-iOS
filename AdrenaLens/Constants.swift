@@ -28,16 +28,16 @@ struct Constants {
 let BaseURL  = "http://adrenalensapp.com/API/"
 
 //Login Registration API
-let url_Login  = BaseURL + "login.php"
-let url_Register  = BaseURL + "register.php"
-let url_SetProfilePic  = BaseURL + "profile.php"
-let url_SetProfile  = BaseURL + ""
+let url_login  = BaseURL + "login.php"
+let url_register  = BaseURL + "register.php"
+let url_setProfilePic  = BaseURL + "profile.php"
+let url_setProfile  = BaseURL + ""
 
 //Image API
-let url_PostPhoto  = BaseURL + "upload_photo.php"
+let url_postPhoto  = BaseURL + "upload_photo.php"
 let url_timeline  = BaseURL + "timeline.php"
 let url_myTimeline  = BaseURL + "my_timeline.php"
-
+let url_searchPhotos  = BaseURL + "search.php"
 
 /*
  http:// adrenalensapp.com/API/register.php
@@ -59,6 +59,7 @@ let url_myTimeline  = BaseURL + "my_timeline.php"
  unique_id
  user_id
  profile_photo
+ bio_graphy
  
  {
  "profile_photo" = "http://adrenalensapp.com/API/app-users-upload/ios265/profile_image.png";
@@ -72,9 +73,13 @@ let url_myTimeline  = BaseURL + "my_timeline.php"
  submitted = 1
  user_id
  unique_id
- caption
+ sport
  user_upload_time
  photo
+ lat
+ lng
+ location
+ user_upload_time : Format (YYYY-MM-DD HH:MM:SS) 2016-08-02 11:22:11 (24 hours)
  
  http:// adrenalensapp.com/API/timeline.php
  submitted = 1
@@ -95,6 +100,12 @@ let url_myTimeline  = BaseURL + "my_timeline.php"
  http:// adrenalensapp.com/API/my_timeline.php
  submitted = 1
  user_id
+ 
+ http:// adrenalensapp.com/API/search.php
+ submitted = 1
+ sport
+ location
+ photo_date : same format as we pass while upload photo
  
  */
 

@@ -164,7 +164,8 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
     }
     
     // Custom methods
-    func selectPhoto() {
+    func selectPhoto()
+    {
         // 1
         view.endEditing(true)
         
@@ -215,25 +216,24 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "Please select location for game!")
             return
         }
-        else if NSDate().isGreaterThanDate(txtDate.date!) {
-            CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "invalid date!")
-            return
-        }
+//        else if NSDate().isLessThanDate(txtDate.date!) {
+//            CommonUtils.sharedUtils.showAlert(self, title: "Message", message: "invalid date!")
+//            return
+//        }
         
         let Parameters = ["submitted": "1",
                           "unique_id" : userDetail["unique_id"] as? String ?? "",
                           "user_id" : userDetail["user_id"] as? String ?? "",
-                          "caption" : txtSport.text ?? "",
+                          "sport" : txtSport.text ?? "",
                           "location" : txtLocation.text ?? "",
                           "lat" : "73.01231",
                           "long" : "68.32323",
-                          "user_upload_time" : txtDate.date?.customFormatted ?? "",
-                          "user_upload_time" : NSDate().customFormatted]
-        
+                          "user_upload_time" : txtDate.date?.strDateInUTC ?? "",
+                          "CreatedAt" : NSDate().strDateInUTC]
         print(Parameters)
         
-        CommonUtils.sharedUtils.showProgress(self.view, label: "Uploading image...")
-        Alamofire.upload(.POST, url_PostPhoto, multipartFormData: { (multipartFormData) -> Void in
+        CommonUtils.sharedUtils.showProgress(self.view, label: "Publishing photo...")
+        Alamofire.upload(.POST, url_postPhoto, multipartFormData: { (multipartFormData) -> Void in
             if let imageData = UIImageJPEGRepresentation(self.imgToPost!, 0.8) {
                 multipartFormData.appendBodyPart(data: imageData, name: "photo", fileName: "file.png", mimeType: "image/png")
             }
@@ -242,9 +242,6 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
             }
             })
         { (encodingResult) -> Void in
-            
-            CommonUtils.sharedUtils.hideProgress()
-            
             switch encodingResult {
                 
             case .Success (let upload, _, _):
@@ -258,11 +255,15 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                        if let status = json["status"].string,
+                            msg = json["msg"].string where status == "1"
+                        {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)
-                            self.imgToPost = nil
-                            self.imgTaken = false
+                            self.resetValues()
+                            //Go To First tab
+                            self.tabBarController?.selectedIndex = 0
+                            
                         } else {
                             SVProgressHUD.showErrorWithStatus("Unable to post photo!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
@@ -271,15 +272,31 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                         //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
                         
                     case .Failure(let error):
+                        CommonUtils.sharedUtils.hideProgress()
                         print("Request failed with error: \(error)")
                     }
                 }
             //break
             case .Failure(let errorType):
                 print("\(errorType)")
+                CommonUtils.sharedUtils.hideProgress()
                 SVProgressHUD.showErrorWithStatus("Failed to save!")
                 print("Unable to save user profile information : \(errorType)")
             }
         }
+    }
+    
+    func resetValues()
+    {
+        imgTaken = false
+        imgToPost = nil
+        self.txtImages.text = nil
+        
+        txtDate?.setDate(NSDate(), animated: true)
+        txtDate.maximumDate = NSDate()
+        
+        //currentLocation
+        //selectedLocation
+        //txtLocation.text = "Select Location"
     }
 }
