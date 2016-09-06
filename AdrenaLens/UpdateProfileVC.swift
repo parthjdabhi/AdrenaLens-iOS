@@ -121,8 +121,7 @@ class UpdateProfileVC: UIViewController, UINavigationControllerDelegate, UIImage
         }
         
         let Parameters = ["submitted": "1",
-                          "unique_id" : userDetail["unique_id"] as? String ?? "",
-                          "user_id" : userDetail["user_id"] as? String ?? "",
+                          "user_id" : "\(userDetail["user_id"] as? String ?? "0")",
                           "bio_graphy" : tvCaption.text ?? "",
                           "upload_time" : NSDate().strDateInUTC]
         
@@ -154,7 +153,9 @@ class UpdateProfileVC: UIViewController, UINavigationControllerDelegate, UIImage
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                        userDetail = (json.dictionaryObject != nil) ? json.dictionaryObject! : userDetail
+                        
+                        if let status = json["status"].int, msg = json["msg"].string where status == 1 {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)
                             self.navigationController?.popViewControllerAnimated(true)

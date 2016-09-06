@@ -86,18 +86,18 @@ class FindPhotosVC: UIViewController, IQDropDownTextFieldDelegate {
             return
         }
         
-        if let unique_id = userDetail["unique_id"] as? String , user_id = userDetail["user_id"] as? String
+        if let user_id = userDetail["user_id"] as? String
         {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Searching..")
             
             let Parameters = ["submitted" : "1",
-                              "unique_id" : unique_id,
-                              "user_id" : user_id,
+                              "user_id" : "\(user_id)",
                               "sport" : txtSport.text ?? "",
-                              "location" : txtLocation.text ?? "",
-                              "photo_date" : txtDate.date?.strDateInUTC ?? ""]
+                              //"location" : txtLocation.text ?? "",
+                              //"photo_date" : txtDate.date?.strDateInUTC ?? ""
+                             ]
             
-            Alamofire.request(.POST, url_myTimeline, parameters: Parameters)
+            Alamofire.request(.POST, url_searchPhotos, parameters: Parameters)
                 .validate()
                 .responseJSON { response in
                     CommonUtils.sharedUtils.hideProgress()
@@ -107,21 +107,21 @@ class FindPhotosVC: UIViewController, IQDropDownTextFieldDelegate {
                         let json = JSON(data)
                         print(json.dictionary)
                         
-                        if let status = json["status"].string,
-                            result = json["result"].array where status == "1"
+                        if let status = json["status"].int,
+                            result = json["result"].array
+                            where status == 1 && result.count > 0
                         {
                             print(result)
                             searchTimeline = result
-                            //NSUserDefaults.standardUserDefaults().setObject(result, forKey: "myTimeline")
-                            //NSUserDefaults.standardUserDefaults().synchronize()
+                            
+                            let searchResultvc = self.storyboard?.instantiateViewControllerWithIdentifier("SearchResultVC") as! SearchResultVC
+                            self.navigationController?.pushViewController(searchResultvc, animated: true)
                             
                         } else  if let msg = json["msg"].string {
                             SVProgressHUD.showErrorWithStatus(msg)
                         } else {
                             SVProgressHUD.showErrorWithStatus("Unable to get your timeline!")
                         }
-                        
-                        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
                         
                     case .Failure(let error):
                         print("Request failed with error: \(error)")

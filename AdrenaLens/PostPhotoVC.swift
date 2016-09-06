@@ -222,8 +222,7 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
 //        }
         
         let Parameters = ["submitted": "1",
-                          "unique_id" : userDetail["unique_id"] as? String ?? "",
-                          "user_id" : userDetail["user_id"] as? String ?? "",
+                          "user_id" : "\(userDetail["user_id"] as? String ?? "0")",
                           "sport" : txtSport.text ?? "",
                           "location" : txtLocation.text ?? "",
                           "lat" : "73.01231",
@@ -255,8 +254,8 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string,
-                            msg = json["msg"].string where status == "1"
+                        if let status = json["status"].int,
+                            msg = json["msg"].string where status == 1
                         {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)

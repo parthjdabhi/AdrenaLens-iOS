@@ -85,8 +85,7 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         }
         
         let Parameters = ["submitted": "1",
-                          "unique_id" : userDetail["unique_id"] as? String ?? "",
-                          "user_id" : userDetail["user_id"] as? String ?? ""]
+                          "user_id" : "\(userDetail["user_id"] as? Int ?? 0)" ]
         print(Parameters)
         
         CommonUtils.sharedUtils.showProgress(self.view, label: "Uploading image...")
@@ -115,13 +114,13 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string, msg = json["msg"].string where status == "1" {
+                        if let status = json["status"].int, msg = json["msg"].string where status == 1 {
                             print(msg)
                             SVProgressHUD.showSuccessWithStatus(msg)
                             let signInViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
                             self.navigationController?.pushViewController(signInViewController, animated: true)
                         } else {
-                            SVProgressHUD.showErrorWithStatus("Unable to register!")
+                            SVProgressHUD.showErrorWithStatus("Unable to update information!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)
                         }
                         

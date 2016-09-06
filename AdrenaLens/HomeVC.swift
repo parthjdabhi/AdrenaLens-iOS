@@ -25,6 +25,10 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //self.tblPhotos.estimatedRowHeight = 325.0
+        //self.tblPhotos.rowHeight = UITableViewAutomaticDimension
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,13 +53,12 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func getTimeline()
     {
-        if let unique_id = userDetail["unique_id"] as? String , user_id = userDetail["user_id"] as? String
+        if let user_id = userDetail["user_id"] as? String
         {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
             
             let Parameters = ["submitted" : "1",
-                            "unique_id" : unique_id,
-                            "user_id" : user_id]
+                            "user_id" : "\(user_id)"]
             
             Alamofire.request(.POST, url_timeline, parameters: Parameters)
                 .validate()
@@ -67,8 +70,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         let json = JSON(data)
                         print(json.dictionary)
                         
-                        if let status = json["status"].string,
-                            result = json["result"].array where status == "1"
+                        if let status = json["status"].int,
+                            result = json["result"].array where status == 1
                         {
                             print(result)
                             timeline = result
@@ -80,10 +83,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                         } else  if let msg = json["msg"].string {
                             SVProgressHUD.showErrorWithStatus(msg)
                         } else {
-                            SVProgressHUD.showErrorWithStatus("Unable to sign in!")
+                            SVProgressHUD.showErrorWithStatus("Unable to get timeline photos!")
                         }
-                        
-                        //"status": 1, "result": , "msg": Registraion success! Please check your email for activation key.
                         
                     case .Failure(let error):
                         print("Request failed with error: \(error)")
@@ -93,6 +94,14 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+//    
+//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -110,10 +119,12 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell:PhotoTableViewCell = self.tblPhotos.dequeueReusableCellWithIdentifier(PhotoTableViewCell.identifier) as! PhotoTableViewCell!
         
         cell.lblCaption.text = timeline[indexPath.row]["user_photo"].dictionaryObject?["name"] as? String ?? ""
-        cell.lblDetail.text = timeline[indexPath.row]["sport"].string ?? ""
+        cell.lblDetail.text = "\(timeline[indexPath.row]["sport"].string ?? "")"
         cell.lblDateTime.text = timeline[indexPath.row]["user_upload_time"].string?.asDateUTC?.getElapsedInterval() ?? ""
         
         cell.imgPhoto.sd_setImageWithURL(NSURL(string: timeline[indexPath.row]["photo"].string ?? ""))
+        
+        cell.layoutIfNeeded()
         
         return cell
     }

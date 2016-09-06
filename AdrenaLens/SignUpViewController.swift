@@ -93,18 +93,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].string,
-                            msg = json["msg"].string,
+                        if let status = json["status"].int,
                             result = json["result"].dictionaryObject
-                            where status == "1"
+                            where status == 1
                         {
-                            print(msg)
-                            SVProgressHUD.showSuccessWithStatus(msg)
+                            print(json["msg"].string )
+                            SVProgressHUD.showSuccessWithStatus(json["msg"].string ?? "Register successfully")
                             userDetail = result
                             
                             //self.navigationController?.popViewControllerAnimated(true)
                             let photoViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PhotoViewController") as! PhotoViewController!
                             self.navigationController?.pushViewController(photoViewController, animated: true)
+                        }
+                        else if let msg = json["msg"].string {
+                            print(msg)
+                            SVProgressHUD.showSuccessWithStatus(msg)
+                            self.navigationController?.popViewControllerAnimated(true)
                         } else {
                             SVProgressHUD.showErrorWithStatus("Unable to register!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)

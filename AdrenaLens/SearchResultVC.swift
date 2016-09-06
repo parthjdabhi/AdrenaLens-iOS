@@ -44,10 +44,10 @@ class SearchResultVC: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     // number of rows in table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchTimeline.count
@@ -71,12 +71,9 @@ class SearchResultVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // method to run when table view cell is tapped
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell at index \(indexPath.row).")
-        //let cell = tableView.cellForRowAtIndexPath(indexPath)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        //let arg = Agrume(imageURL: NSURL(string: timeline[indexPath.row]["photo"].string ?? "")!,backgroundBlurStyle: .Light)
-        //arg.showFrom(self)
+        print("You tapped cell at index \(indexPath.row).")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         selectedPhoto = searchTimeline[indexPath.row]
         let viewPhotoVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewPhotoVC") as! ViewPhotoVC

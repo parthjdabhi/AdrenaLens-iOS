@@ -103,7 +103,7 @@ class FirebaseSignInViewController: UIViewController {
                         let json = JSON(data)
                         print(json.dictionary)
                         
-                        if let status = json["status"].string, result = json["result"].dictionaryObject where status == "1" {
+                        if let status = json["status"].int, result = json["result"].dictionaryObject where status == 1 {
                             
                             userDetail = result
                             NSUserDefaults.standardUserDefaults().setObject(result, forKey: "userDetail")

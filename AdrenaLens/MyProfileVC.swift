@@ -44,13 +44,15 @@ class MyProfileVC: UIViewController {
         imgProfile.layoutSubviews()
         imgProfile.setCornerRadious(imgProfile.frame.size.width/2)
         imgProfile.setBorder(0.5, color: UIColor.blackColor())
-        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""))
-        
-        lblName.text = userDetail["user_name"] as? String
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Update Detail
+        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""))
+        lblName.text = userDetail["user_name"] as? String
+        
         getMyTimeline()
     }
     
@@ -118,13 +120,12 @@ class MyProfileVC: UIViewController {
     
     func getMyTimeline()
     {
-        if let unique_id = userDetail["unique_id"] as? String , user_id = userDetail["user_id"] as? String
+        if let user_id = userDetail["user_id"] as? Int
         {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
             
             let Parameters = ["submitted" : "1",
-                              "unique_id" : unique_id,
-                              "user_id" : user_id]
+                              "user_id" : "\(user_id)"]
             
             Alamofire.request(.POST, url_myTimeline, parameters: Parameters)
                 .validate()
@@ -136,8 +137,8 @@ class MyProfileVC: UIViewController {
                         let json = JSON(data)
                         print(json.dictionary)
                         
-                        if let status = json["status"].string,
-                            result = json["result"].array where status == "1"
+                        if let status = json["status"].int,
+                            result = json["result"].array where status == 1
                         {
                             print(result)
                             myTimeline = result
