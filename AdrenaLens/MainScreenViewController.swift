@@ -20,7 +20,7 @@ class MainScreenViewController: UIViewController {
         
         //profile_photo
         if let profile_photo = userDetail["profile_photo"] as? String {
-            profilePicture.sd_setImageWithURL(NSURL(string: profile_photo))
+            profilePicture.sd_setImageWithURL(NSURL(string: profile_photo), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
         }
         
     }

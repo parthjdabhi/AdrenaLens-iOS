@@ -25,6 +25,7 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SVProgressHUD (1.1.3)
   - SwiftyJSON (2.3.2)
+  - WebBrowser (0.0.8)
 
 DEPENDENCIES:
   - Agrume (~> 2.7)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 1.1)
   - SwiftyJSON (~> 2.3)
+  - WebBrowser (~> 0.0)
 
 SPEC CHECKSUMS:
   Agrume: d61d044cd26db13ccad57da0366fbf14b8a0f242
@@ -54,7 +56,8 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  WebBrowser: d187e245fc8d54a6a754a896039066d95ecebdb5
 
-PODFILE CHECKSUM: d92103b46882a0ba508695fd28dad34a52143304
+PODFILE CHECKSUM: 4120e2a5087a8acce90cf3b20f5a8f8f4a4209ae
 
 COCOAPODS: 1.0.1

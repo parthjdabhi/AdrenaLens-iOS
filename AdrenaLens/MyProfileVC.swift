@@ -50,7 +50,7 @@ class MyProfileVC: UIViewController {
         super.viewWillAppear(animated)
         
         // Update Detail
-        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""))
+        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
         lblName.text = userDetail["user_name"] as? String
         
         getMyTimeline()
@@ -109,8 +109,11 @@ class MyProfileVC: UIViewController {
 //        cell.backgroundView?.backgroundColor = UIColor.redColor()
 //        return cell
         let cell:MyPhotoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(MyPhotoCollectionViewCell.identifier, forIndexPath: indexPath) as! MyPhotoCollectionViewCell
-        let url = NSURL(string: myTimeline[indexPath.row]["photo"].string ?? "")
-        cell.img.sd_setImageWithURL(url)
+//        let url = NSURL(string: myTimeline[indexPath.row]["photo"].string ?? "")
+//        cell.img.sd_setImageWithURL(url, placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
+        
+        cell.img.image = UIImage(named: "bg_Placeholder@3x.png")
+        
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -120,7 +123,7 @@ class MyProfileVC: UIViewController {
     
     func getMyTimeline()
     {
-        if let user_id = userDetail["user_id"] as? Int
+        if let user_id = userDetail["user_id"] as? String
         {
             CommonUtils.sharedUtils.showProgress(self.view, label: "Loading..")
             

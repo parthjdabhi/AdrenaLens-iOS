@@ -21,4 +21,6 @@ target 'AdrenaLens' do
     pod 'SVProgressHUD', '~> 1.1'
     pod 'Agrume', '~> 2.7'
     
+    pod 'WebBrowser', '~> 0.0'
+    
 end

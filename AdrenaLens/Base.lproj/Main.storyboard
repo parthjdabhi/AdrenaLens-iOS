@@ -51,6 +51,8 @@
             <string>ConthraxSb-Regular</string>
             <string>ConthraxSb-Regular</string>
             <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
+            <string>ConthraxSb-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -967,23 +969,14 @@
                                     <constraint firstItem="faY-WG-jVw" firstAttribute="centerX" secondItem="MpC-2q-gPr" secondAttribute="centerX" id="r7B-hu-Qcg"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BOU-3z-seb">
-                                <rect key="frame" x="56" y="580" width="262" height="30"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Can't find your location? ">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="11" name="ConthraxSb-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="Click here">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="11" name="ConthraxSb-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOU-3z-seb">
+                                <rect key="frame" x="56" y="584" width="262" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="3EY-kg-Ccj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="11"/>
+                                <state key="normal" title="Can't find your location? Click here">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="actionCantFindLocation:" destination="2qt-fS-Rul" eventType="touchUpInside" id="awx-En-8Bb"/>
@@ -1098,10 +1091,12 @@
                             <constraint firstItem="oc9-98-ceM" firstAttribute="centerX" secondItem="FB5-lm-bgP" secondAttribute="centerX" id="KWr-cT-pM4"/>
                             <constraint firstItem="fPw-yZ-spn" firstAttribute="leading" secondItem="FB5-lm-bgP" secondAttribute="leading" id="Ktx-8t-fwN"/>
                             <constraint firstAttribute="trailing" secondItem="fPw-yZ-spn" secondAttribute="trailing" id="QpQ-oN-sHo"/>
+                            <constraint firstItem="BOU-3z-seb" firstAttribute="centerX" secondItem="FB5-lm-bgP" secondAttribute="centerX" id="b7l-Go-mcw"/>
                             <constraint firstItem="fPw-yZ-spn" firstAttribute="top" secondItem="FB5-lm-bgP" secondAttribute="top" id="bG6-C9-v3U"/>
                             <constraint firstItem="oc9-98-ceM" firstAttribute="leading" secondItem="FB5-lm-bgP" secondAttribute="leading" constant="20" id="hev-LA-3Df"/>
                             <constraint firstItem="oc9-98-ceM" firstAttribute="top" secondItem="MpC-2q-gPr" secondAttribute="bottom" constant="41" id="mEc-cH-b31"/>
                             <constraint firstItem="MpC-2q-gPr" firstAttribute="top" secondItem="fPw-yZ-spn" secondAttribute="bottom" id="pkf-U6-94V"/>
+                            <constraint firstItem="mcv-6w-Htb" firstAttribute="top" secondItem="BOU-3z-seb" secondAttribute="bottom" constant="8" id="zJS-qz-VPU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="ic_ice" selectedImage="ic_ice" id="WMS-ki-312"/>
@@ -1315,32 +1310,18 @@
                                     <constraint firstAttribute="height" constant="64" id="JUn-Ob-Y94"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNq-QT-fgs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNq-QT-fgs">
                                 <rect key="frame" x="53" y="580" width="268" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="umB-M4-HtJ"/>
                                 </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Can't find your location?">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="12" name="ConthraxSb-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content=" ">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="ConthraxSb-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="Click here">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="12" name="ConthraxSb-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name="ConthraxSb-Regular" family="Conthrax" pointSize="12"/>
+                                <state key="normal" title="Can't find your location? Click here">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionSelectLocation:" destination="FAC-VS-CEq" eventType="touchUpInside" id="6lb-ve-F0W"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1939,7 +1920,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiS-rb-QaJ">
                                         <rect key="frame" x="89" y="8" width="158" height="26"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="0cd-tn-96y"/>
                                             <constraint firstAttribute="width" constant="158" id="wdN-Uj-utH"/>

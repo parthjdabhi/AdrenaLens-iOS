@@ -114,11 +114,10 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].int, msg = json["msg"].string where status == 1 {
-                            print(msg)
-                            SVProgressHUD.showSuccessWithStatus(msg)
-                            let signInViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SignInViewController") as! FirebaseSignInViewController!
-                            self.navigationController?.pushViewController(signInViewController, animated: true)
+                        if let status = json["status"].int, redirect_url = json["redirect_url"].string where status == 1 {
+                            print(redirect_url)
+                            //SVProgressHUD.showSuccessWithStatus(msg)
+                            
                         } else {
                             SVProgressHUD.showErrorWithStatus("Unable to update information!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)

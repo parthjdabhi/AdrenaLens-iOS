@@ -39,6 +39,7 @@ let url_timeline  = BaseURL + "timeline.php"
 let url_myTimeline  = BaseURL + "my_timeline.php"
 let url_searchPhotos  = BaseURL + "search.php"
 
+let url_Purchase  = BaseURL + "autologin.php"
 
 //login.php
 //http://adrenalensapp.com/WP_API/register.php
@@ -116,6 +117,13 @@ let url_searchPhotos  = BaseURL + "search.php"
  sport
  location
  photo_date : same format as we pass while upload photo
+ 
+ autologin.php
+ 
+ parameters :
+ submitted=1
+ user_id = user id
+ product_id
  
  */
 

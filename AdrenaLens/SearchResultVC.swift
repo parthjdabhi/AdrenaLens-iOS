@@ -64,7 +64,8 @@ class SearchResultVC: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.lblDetail.text = searchTimeline[indexPath.row]["sport"].string ?? ""
         cell.lblDateTime.text = searchTimeline[indexPath.row]["user_upload_time"].string?.asDateUTC?.getElapsedInterval() ?? ""
         
-        cell.imgPhoto.sd_setImageWithURL(NSURL(string: searchTimeline[indexPath.row]["photo"].string ?? ""))
+        //cell.imgPhoto.sd_setImageWithURL(NSURL(string: searchTimeline[indexPath.row]["photo"].string ?? ""), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
+        cell.imgPhoto.image = UIImage(named: "bg_Placeholder@3x.png")
         
         return cell
     }
