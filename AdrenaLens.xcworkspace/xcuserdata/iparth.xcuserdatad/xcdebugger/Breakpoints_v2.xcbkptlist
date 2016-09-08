@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/MyProfileVC.swift"
-            timestampString = "494595530.404332"
+            timestampString = "495048390.572882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -214,7 +214,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/UpdateProfileVC.swift"
@@ -352,28 +352,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdrenaLens/UpdateProfileVC.swift"
-            timestampString = "494862643.870152"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "UpdateProfilePicture()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AdrenaLens/MyProfileVC.swift"
-            timestampString = "494964406.472694"
+            timestampString = "495048390.572882"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "getMyTimeline()"
             landmarkType = "5">
             <Locations>
@@ -385,11 +369,11 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/MyProfileVC.swift"
-                  timestampString = "494964182.623969"
+                  timestampString = "495048194.157786"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
@@ -400,12 +384,12 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/MyProfileVC.swift"
-                  timestampString = "494964182.624085"
+                  timestampString = "495048194.157967"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "562">
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "703">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -417,28 +401,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/MyProfileVC.swift"
-            timestampString = "494862746.619703"
+            timestampString = "495048157.911598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdrenaLens/UpdateProfileVC.swift"
-            timestampString = "494862839.593277"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "UpdateProfilePicture()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -465,7 +433,7 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/HomeVC.swift"
-                  timestampString = "494964182.626379"
+                  timestampString = "495048194.160227"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -480,7 +448,7 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/HomeVC.swift"
-                  timestampString = "494964182.626509"
+                  timestampString = "495048194.160398"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -519,6 +487,38 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "nextButton(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdrenaLens/UpdateProfileVC.swift"
+            timestampString = "495047940.042064"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "UpdateProfilePicture()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdrenaLens/UpdateProfileVC.swift"
+            timestampString = "495047991.847652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "UpdateProfilePicture()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

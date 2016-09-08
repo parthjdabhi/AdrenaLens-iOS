@@ -50,8 +50,9 @@ class MyProfileVC: UIViewController {
         super.viewWillAppear(animated)
         
         // Update Detail
-        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
         lblName.text = userDetail["user_name"] as? String
+        imgProfile.sd_setImageWithURL(NSURL(string: userDetail["profile_photo"] as? String ?? ""), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
+        lblBio.text = userDetail["bio_graphy"] as? String
         
         getMyTimeline()
     }
@@ -78,6 +79,13 @@ class MyProfileVC: UIViewController {
         actionSheetController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
         actionSheetController.addAction(UIAlertAction(title: "Logout", style: UIAlertActionStyle.Destructive, handler: { (actionSheetController) -> Void in
             print("handle Logout action...")
+            
+            userDetail = [:]
+            timeline = []
+            myTimeline = []
+            searchTimeline = []
+            selectedPhoto = []
+            
             NSUserDefaults.standardUserDefaults().removeObjectForKey("userDetail")
             NSUserDefaults.standardUserDefaults().synchronize()
             
@@ -109,10 +117,9 @@ class MyProfileVC: UIViewController {
 //        cell.backgroundView?.backgroundColor = UIColor.redColor()
 //        return cell
         let cell:MyPhotoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(MyPhotoCollectionViewCell.identifier, forIndexPath: indexPath) as! MyPhotoCollectionViewCell
-//        let url = NSURL(string: myTimeline[indexPath.row]["photo"].string ?? "")
-//        cell.img.sd_setImageWithURL(url, placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
-        
-        cell.img.image = UIImage(named: "bg_Placeholder@3x.png")
+        let url = NSURL(string: myTimeline[indexPath.row]["photo"].string ?? "")
+        cell.img.sd_setImageWithURL(url, placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
+        //cell.img.image = UIImage(named: "bg_Placeholder@3x.png")
         
         return cell
     }

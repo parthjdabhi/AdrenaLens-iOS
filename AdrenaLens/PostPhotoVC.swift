@@ -226,7 +226,7 @@ class PostPhotoVC: UIViewController, UINavigationControllerDelegate, UIImagePick
                           "sport" : txtSport.text ?? "",
                           "location" : txtLocation.text ?? "",
                           "lat" : "73.01231",
-                          "long" : "68.32323",
+                          "lng" : "68.32323",
                           "user_upload_time" : txtDate.date?.strDateInUTC ?? "",
                           "CreatedAt" : NSDate().strDateInUTC]
         print(Parameters)

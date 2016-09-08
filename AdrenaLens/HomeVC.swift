@@ -121,8 +121,8 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.lblDetail.text = "\(timeline[indexPath.row]["sport"].string ?? "")"
         cell.lblDateTime.text = timeline[indexPath.row]["user_upload_time"].string?.asDateUTC?.getElapsedInterval() ?? ""
         
-        //cell.imgPhoto.sd_setImageWithURL(NSURL(string: timeline[indexPath.row]["photo"].string ?? ""))
-        cell.imgPhoto.image = UIImage(named: "bg_Placeholder@3x.png")
+        cell.imgPhoto.sd_setImageWithURL(NSURL(string: timeline[indexPath.row]["photo"].string ?? ""), placeholderImage: UIImage(named: "bg_Placeholder@3x.png"))
+//        cell.imgPhoto.image = UIImage(named: "bg_Placeholder@3x.png")
         
         cell.layoutIfNeeded()
         

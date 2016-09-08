@@ -153,7 +153,11 @@ class UpdateProfileVC: UIViewController, UINavigationControllerDelegate, UIImage
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        userDetail = (json.dictionaryObject != nil) ? json.dictionaryObject! : userDetail
+                        
+                        if let Detail = json["result"].dictionaryObject {
+                            userDetail = Detail
+                            NSUserDefaults.standardUserDefaults().setObject(userDetail, forKey: "userDetail")
+                        }
                         
                         if let status = json["status"].int, msg = json["msg"].string where status == 1 {
                             print(msg)
