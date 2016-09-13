@@ -142,7 +142,7 @@ class SelectLocationViewController: UIViewController, CLLocationManagerDelegate,
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             
             if #available(iOS 9.0, *) {
-                pinView?.pinTintColor = UIColor.orangeColor()
+                pinView?.pinTintColor = UIColor.redColor()
             } else {
                 // Fallback on earlier versions
                 pinView?.pinColor = MKPinAnnotationColor.Red

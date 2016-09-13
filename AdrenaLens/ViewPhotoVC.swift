@@ -71,7 +71,7 @@ class ViewPhotoVC: UIViewController {
             let webBrowserViewController = WebBrowserViewController()
             //webBrowserViewController.delegate = self
             webBrowserViewController.language = .English
-            webBrowserViewController.tintColor = UIColor.orangeColor()
+            webBrowserViewController.tintColor = clrOrange
             webBrowserViewController.barTintColor = UIColor.blackColor()
             webBrowserViewController.toolbarHidden = false
             webBrowserViewController.showActionBarButton = true

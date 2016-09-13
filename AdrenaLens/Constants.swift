@@ -25,6 +25,11 @@ struct Constants {
     }
 }
 
+
+//252	163	3	
+
+let clrOrange = UIColor(red: 252/255.0, green: 163/255.0, blue: 3/255.0, alpha: 1.0)
+
 let BaseURL  = "http://adrenalensapp.com/WP_API/"   //"http:// adrenalensapp.com/API/"
 
 //Login Registration API

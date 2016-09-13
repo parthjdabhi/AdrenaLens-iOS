@@ -114,10 +114,16 @@ class PhotoViewController: UIViewController, UITextFieldDelegate, UINavigationCo
                         print(json.dictionary)
                         print(json.dictionaryObject)
                         
-                        if let status = json["status"].int, redirect_url = json["redirect_url"].string where status == 1 {
-                            print(redirect_url)
-                            //SVProgressHUD.showSuccessWithStatus(msg)
+                        if let status = json["status"].int, result = json["result"].dictionaryObject where status == 1 {
                             
+                            SVProgressHUD.showSuccessWithStatus(json["status"].string ?? "Registration completed successfully.")
+                            
+                            userDetail = result
+                            NSUserDefaults.standardUserDefaults().setObject(result, forKey: "userDetail")
+                            NSUserDefaults.standardUserDefaults().synchronize()
+                            
+                            //Go To Main Screen
+                            self.performSegueWithIdentifier("segueMainScreen", sender: nil)
                         } else {
                             SVProgressHUD.showErrorWithStatus("Unable to update information!")
                             //CommonUtils.sharedUtils.showAlert(self, title: "Error", message: (error?.localizedDescription)!)

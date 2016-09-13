@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         SVProgressHUD.setDefaultMaskType(.Black)
         SVProgressHUD.setRingThickness(2)
         SVProgressHUD.setAnimationCurve(UIViewAnimationCurve.Linear)
-        SVProgressHUD.setForegroundColor(UIColor.orangeColor())
+        SVProgressHUD.setForegroundColor(clrOrange)
 
         if let user = NSUserDefaults.standardUserDefaults().objectForKey("userDetail") as? Dictionary<String,AnyObject>
         {
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UITabBar.appearance().itemPositioning = .Centered
         UITabBar.appearance().barTintColor = UIColor.blackColor()
         UITabBar.appearance().tintColor = UIColor(red: 252/255.0, green: 162/255.0, blue: 0.01/255.0, alpha: 1.0)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.orangeColor()], forState:.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: clrOrange], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blackColor()], forState:.Selected)
         
         return true

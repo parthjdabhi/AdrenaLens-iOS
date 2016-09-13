@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/SignUpViewController.swift"
@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/SignUpViewController.swift"
@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/SignUpViewController.swift"
@@ -369,11 +369,11 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/MyProfileVC.swift"
-                  timestampString = "495048194.157786"
+                  timestampString = "495464828.000572"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
@@ -384,11 +384,11 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/MyProfileVC.swift"
-                  timestampString = "495048194.157967"
+                  timestampString = "495464828.00071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
                   offsetFromSymbolStart = "703">
                </Location>
             </Locations>
@@ -433,7 +433,7 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/HomeVC.swift"
-                  timestampString = "495048194.160227"
+                  timestampString = "495464828.003525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -448,7 +448,7 @@
                   moduleName = "AdrenaLens"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/iparth/Desktop/iWork/Dustin%20Allen%20-%20Harloch/4%20AderenaLens/23Aug%209Am%20Starts%20from/AdrenaLens-master/AdrenaLens/HomeVC.swift"
-                  timestampString = "495048194.160398"
+                  timestampString = "495464828.003768"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
@@ -481,11 +481,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdrenaLens/PhotoViewController.swift"
-            timestampString = "494959084.716505"
+            timestampString = "495465239.722744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "nextButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
